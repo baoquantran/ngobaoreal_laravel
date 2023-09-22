@@ -32,6 +32,6 @@ Route::get('/delasol',[Controller::class,'delasol']);
 
 
 //----------------------------------------admin----------------------------------
-Route::group(['prefix' => 'admin'], function() {  
-    Route::get('/index',[AdminController::class,'dasboard']);
+Route::group(['prefix' => 'dashboard'], function() {  
+    Route::get('/',[AdminController::class,'index']);
 });

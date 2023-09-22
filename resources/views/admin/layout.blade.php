@@ -9,7 +9,7 @@
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/admin/style.css">
 
 	<title>Đánh giá Đoàn viên</title>
 </head>
@@ -22,7 +22,7 @@
 		<a href="#" class="brand">
 			<!-- <i class='bx bxs-smile'></i>
 			<span class="text">AdminHub</span> -->
-			<img class="logo_admin" src="images/ngobaoreal2.png" alt="">
+			<img class="logo_admin" src="/admin/images/ngobaoreal2.png" alt="">
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
@@ -123,7 +123,7 @@
 
 
 
-	<script src="script.js"></script>
+	<script src="/admin/script.js"></script>
 </body>
 
 </html>

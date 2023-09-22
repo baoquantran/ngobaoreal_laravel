@@ -1,4 +1,4 @@
-@extends('admin/layout_admin')
+@extends('admin.layout')
 @section('tieudetrang')
 @endsection
 @section('noidung')
