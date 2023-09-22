@@ -1,4 +1,4 @@
-@extends('kygui-layout')
+@extends('user.layout.kygui-layout')
 @section('tieudetrang')
     <!-- masteries-img -->
     <div class="py-5">

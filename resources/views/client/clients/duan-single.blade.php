@@ -1,4 +1,4 @@
-@extends('user.layout')
+@extends('client.clients.layout.layout')
 @section('tieudetrang')
 
 @endsection

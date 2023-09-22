@@ -20,7 +20,7 @@ Route::get('/',[Controller::class,'index']);
 Route::get('/gioi-thieu',[Controller::class,'gioithieu']);
 Route::get('/bai-viet',[Controller::class,'baiviet']);
 Route::get('/du-an',[Controller::class,'duan']);
-Route::get('/du-an-detail',[Controller::class,'duan-detail']);
+Route::get('/du-an-detail',[Controller::class,'duandetail']);
 Route::get('/tuyen-dung',[Controller::class,'tuyendung']);
 Route::get('/lien-he',[Controller::class,'lienhe']);
 Route::get('/ky-gui',[Controller::class,'kygui']);

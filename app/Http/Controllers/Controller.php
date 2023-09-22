@@ -10,25 +10,25 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
     function index(){
-        return view('user.index');
+        return view('client.clients.index');
     }
     function gioithieu(){
-        return view('user.about');
+        return view('client.clients.about');
     }
     function baiviet(){
-        return view('user.blog');
+        return view('client.clients.blog');
     }
     function duan(){
-        return view('user.duan');
+        return view('client.clients.duan');
     }
     function duandetail(){
-        return view('user.duan-single');
+        return view('client.clients.duan-single');
     }
     function tuyendung(){
-        return view('user.tuyendung');
+        return view('client.clients.tuyendung');
     }
     function lienhe(){
-        return view('user.contact');
+        return view('client.clients.contact');
     }
     function masterisecentralpoint(){
         return view('user.MASTERISECENTERPOINT');
