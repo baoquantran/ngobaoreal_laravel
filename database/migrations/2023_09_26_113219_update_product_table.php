@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('post', function (Blueprint $table) {
-            $table->boolean('hot')->default(1);
-            $table->integer('views')->default(0);
- 
+        Schema::table('product', function (Blueprint $table) {
+            $table->boolean('kygui')->default(1);
         });
     }
 
