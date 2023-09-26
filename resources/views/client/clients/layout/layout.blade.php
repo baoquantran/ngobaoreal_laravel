@@ -148,7 +148,7 @@
     <script src="/user/lib/easing/easing.min.js"></script>
     <script src="/user/lib/waypoints/waypoints.min.js"></script>
     <script src="/user/lib/owlcarousel/owl.carousel.min.js"></script>
-
+    
     <!-- Template Javascript -->
     <script src="/user/js/main.js"></script>
 </body>
