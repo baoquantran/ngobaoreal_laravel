@@ -18,7 +18,7 @@ Danh sách dự án
 						</li>
 					</ul>
 				</div>
-				<a href="#" class="btn-download nav-link">
+				<a href="{{ route('project.create') }}" class="btn-download nav-link">
                     <i class="bi bi-plus-circle-dotted"></i>
 					<span class="text">Thêm dự án mới</span>
 				</a>
@@ -53,8 +53,8 @@ Danh sách dự án
 								<td>Căn hộ</td>
 								<td>Đang nhận ký gửi</td>
 								<td>Đang bán</td>
-								<td class="d-flex m-auto">	
-									<a class="btn btn-outline-primary  m-1 " href=""><i class="bi bi-trash3"></i></a>
+								<td class="">	
+									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
 									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
 								</td>
 							</tr>
@@ -66,8 +66,8 @@ Danh sách dự án
 								<td>Căn hộ</td>
 								<td>Đang nhận ký gửi</td>
 								<td>Đang bán</td>
-								<td class="d-flex m-auto">	
-									<a class="btn btn-outline-primary  m-1 " href=""><i class="bi bi-trash3"></i></a>
+								<td class="">	
+									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
 									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
 								</td>
 							</tr>
@@ -79,8 +79,8 @@ Danh sách dự án
 								<td>Căn hộ</td>
 								<td>Đang nhận ký gửi</td>
 								<td>Đang bán</td>
-								<td class="d-flex m-auto">	
-									<a class="btn btn-outline-primary  m-1 " href=""><i class="bi bi-trash3"></i></a>
+								<td class="">	
+									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
 									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
 								</td>
 							</tr>

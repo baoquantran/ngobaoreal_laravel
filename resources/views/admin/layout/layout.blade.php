@@ -27,7 +27,7 @@
 		</a>
 		<ul class="side-menu top">
 			<li>
-				<a class="nav-link" href="#">
+				<a class="nav-link" href="/dashboard">
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Bảng điều khiển</span>
 				</a>
@@ -39,15 +39,27 @@
 				</a>
 			</li>
 			<li>
-				<a class="nav-link" href="#">
-					<i class='bx bxs-group'></i>
-					<span class="text">Quản lý ký gửi</span>
+				<a class="nav-link" href="{{ route('status-project.index') }}">
+					<i class='bx bxs-doughnut-chart'></i>
+					<span class="text">Quản lý trạng thái dự án</span>
+				</a>
+			</li>
+			<li>
+				<a class="nav-link" href="{{ route('post.index') }}">
+					<i class='bx bxs-shopping-bag-alt'></i>
+					<span class="text">Quản lý bài viết</span>
+				</a>
+			</li>
+			<li>
+				<a class="nav-link" href="{{ route('type-post.index') }}">
+					<i class='bx bxs-shopping-bag-alt'></i>
+					<span class="text">Quản lý loại tin</span>
 				</a>
 			</li>
 			<li>
 				<a class="nav-link" href="#">
-					<i class='bx bxs-shopping-bag-alt'></i>
-					<span class="text">Quản lý bài viết</span>
+					<i class='bx bxs-group'></i>
+					<span class="text">Quản lý ký gửi</span>
 				</a>
 			</li>
 			<li>
@@ -59,9 +71,10 @@
 			<li>
 				<a class="nav-link" href="#">
 					<i class='bx bxs-message-dots'></i>
-					<span class="text">Quản lý báo gi</span>
+					<span class="text">Quản lý báo giá</span>
 				</a>
 			</li>
+			
 		</ul>
 		<ul class="side-menu">
 			<li>

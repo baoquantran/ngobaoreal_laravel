@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     function index()
     {
-        $name = "Nguyễn Tấn Duy";
+        $name = "Quân trần";
 
         $test = Str::slug($name);
 

@@ -5,7 +5,20 @@ Danh sách dự án
 @section('noidung')
     	<!-- MAIN -->
 		<main>
-
+		<div class="head-title">
+				<div class="left">
+					<h1>Thêm dự án</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Bảng điều khiển</a>
+						</li>
+						<li><i class='bx bx-chevron-right'></i></li>
+						<li>
+							<a class="active" href="#">Thêm mới dự án</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		<div class="table-data">
 				<div class="order">
 					<form class="row">

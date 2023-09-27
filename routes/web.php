@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StatusProjectController;
+use App\Http\Controllers\TypepostController;
 use App\Http\Controllers\UserController;
 
 
@@ -45,9 +47,17 @@ Route::group(['prefix' => 'dashboard'], function() {
     Route::get('/',[AdminController::class,'index']);
 
 
-    //----------------------------Projecr----------------------------------------------
+    //----------------------------Project----------------------------------------------
 
     Route::resource('project',ProjectController::class);
+
+    //----------------------------status_project----------------------------------------------
+    
+    Route::resource('status-project',StatusProjectController::class);
+
+    //----------------------------Type-post----------------------------------------------
+    
+    Route::resource('type-post',TypepostController::class);
 
     //----------------------------Post----------------------------------------------
     
@@ -57,7 +67,6 @@ Route::group(['prefix' => 'dashboard'], function() {
     
     Route::resource('user',UserController::class);
 });
-
 
 Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')
     ->name('ckfinder_connector');

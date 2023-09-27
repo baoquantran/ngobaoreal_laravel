@@ -11,7 +11,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.manage.post.list_post');
     }
 
     /**
@@ -19,7 +19,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.manage.post.create_post');
     }
 
     /**
@@ -43,7 +43,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.manage.post.update_post');
     }
 
     /**

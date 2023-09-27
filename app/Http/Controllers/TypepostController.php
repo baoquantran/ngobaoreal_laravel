@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class TypepostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.manage.user.list_user');
+        return view('admin.manage.typepost.list_typepost');
     }
 
     /**
@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.manage.user.create_user');
+        return view('admin.manage.typepost.create_typepost');
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-  
+        //
     }
 
     /**
@@ -43,7 +43,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.manage.user.update_user');
+        return view('admin.manage.typepost.update_typepost');
     }
 
     /**
