@@ -126,7 +126,8 @@
 	@include('ckfinder::setup')
 	<script>
 		CKEDITOR.replace('description', {
-    		filebrowserBrowseUrl: "{{ route('ckfinder_browser') }}"
+    		filebrowserBrowseUrl: "{{ route('ckfinder_browser') }}",
+			language: 'vi',
 		});
 
 		CKEDITOR.replace('vitriduan', {

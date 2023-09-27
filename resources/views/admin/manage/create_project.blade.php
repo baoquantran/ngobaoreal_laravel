@@ -11,12 +11,22 @@ Danh sách dự án
 					<form class="row">
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Tên dự án</label>
-							<input type="email" class="form-control p" id="exampleInputEmail1"
+							<input type="text" class="form-control p" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Địa chỉ</label>
-							<input type="email" class="form-control p" id="exampleInputEmail1"
+							<input type="text" class="form-control p" id="exampleInputEmail1"
+								aria-describedby="emailHelp">
+						</div>
+						<div class="mb-3 col-md-6 col-12">
+							<label for="exampleInputEmail1" class="form-label">Nhập giá từ</label>
+							<input type="number" class="form-control p" id="exampleInputEmail1"
+								aria-describedby="emailHelp">
+						</div>
+						<div class="mb-3 col-md-6 col-12">
+							<label for="exampleInputEmail1" class="form-label">Nhập giá đến</label>
+							<input type="number" class="form-control p" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-6 col-12">

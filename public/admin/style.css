@@ -874,3 +874,9 @@ nav .profile .profile-link a:hover {
 		min-width: 420px;
 	}
 }
+
+/* -------------------------create project-------------------------- */
+
+#cke_1_contents {
+    height: 600px !important;
+}
