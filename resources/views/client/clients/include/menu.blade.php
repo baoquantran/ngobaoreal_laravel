@@ -33,7 +33,7 @@
                         </div>
                         <a href="/masterise-central-point" class="nav-item nav-link" target="_blank">Ký gửi</a>
                         <a href="/tuyen-dung" class="nav-item nav-link">Tuyển dụng</a>
-                        <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+                        <a href="/lien-he" class="nav-item nav-link">Liên hệ</a>
                     </div>
                     <a href="" class="btn btn-primary px-3 d-none d-lg-flex"><i class="fa-regular fa-user"></i></a>
                 </div>
