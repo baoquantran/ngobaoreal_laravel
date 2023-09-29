@@ -47,6 +47,12 @@ Route::group(['prefix' => 'dashboard'], function() {
     Route::get('/',[AdminController::class,'index']);
 
 
+    //----------------------------Dang nhap----------------------------------------------
+    Route::get('/login',[AdminController::class,'login']);
+    Route::post('/login',[AdminController::class,'login_post']);
+    Route::get('/loguot',[AdminController::class,'logout']);
+
+
     //----------------------------Project----------------------------------------------
 
     Route::resource('project',ProjectController::class);

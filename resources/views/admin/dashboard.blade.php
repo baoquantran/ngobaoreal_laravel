@@ -98,5 +98,4 @@
 			</div>
 		</main>
 		<!-- MAIN -->
-		{{$test}}
 @endsection

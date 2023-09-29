@@ -19,7 +19,7 @@
                         <a class="btn btn-link text-white-50" href="">Lumiere Boulevard</a>
                         <a class="btn btn-link text-white-50" href="">Masteri Centre Point</a>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-2 col-md-6">
                         <h5 class="text-white mb-4">Vị trí</h5>
                         <a class="btn btn-link text-white-50" href="">Trung Tâm</a>
                         <a class="btn btn-link text-white-50" href="">Khu Thủ Thiêm</a>
@@ -27,7 +27,7 @@
                         <a class="btn btn-link text-white-50" href="">TP. Thủ Đức (Q9)</a>
                         <a class="btn btn-link text-white-50" href="">Biển Hồ Tràm</a>
                     </div>
-                    <div class="col-lg-2 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Liên hệ</h5>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@ngobaorealty"><i class="fa-brands fa-tiktok"></i></a>
@@ -35,6 +35,7 @@
                             <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ngobaoreal/"><i class="fa-brands fa-instagram"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
+                        <div class="fb-page" data-href="https://www.facebook.com/ngobaorealty" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ngobaorealty" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ngobaorealty">Ngo Bao Real</a></blockquote></div>
                     </div>
                 </div>
             </div>
