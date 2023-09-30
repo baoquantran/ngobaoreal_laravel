@@ -32,6 +32,9 @@ Danh sách trạng thái dự án
 						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
+					@if(Session::exists('thongbao'))
+  					<h4 class="alert alert-info text-center">{{ Session::get('thongbao') }}</h4>
+					@endif
 						<thead>
 							<tr>
 								<th>STT</th>
@@ -40,22 +43,22 @@ Danh sách trạng thái dự án
 							</tr>
 						</thead>
 						<tbody>
+							@foreach($status as $st)
 							<tr>
-								<td>1</td>
-								<td>Cho thuê</td>
+								<td>{{$st->id_status}}</td>
+								<td>{{$st->name}}</td>
 								<td class="">	
-									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
-									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
+									<a class="btn btn-outline-primary  m-1" href="{{route('status-project.edit',$st->id_status)}}"><i class="bi bi-pencil-square"></i></a>
+									<!-- <a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-trash3"></i></a> -->
+									<form class="d-inline" action="{{ route('status-project.destroy', $st->id_status) }}" method="POST">
+  									@csrf @method('DELETE')
+									<button type='submit' onclick="return confirm('Xóa hả')" class="btn btn-outline-danger">
+									<i class="bi bi-trash3"></i>
+									</button>
+									</form>
 								</td>
 							</tr>
-                            <tr>
-								<td>2</td>
-								<td>Đang bán</td>
-								<td class="">	
-									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
-									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
-								</td>
-							</tr>
+                           @endforeach
 						</tbody>
 					</table>
 				</div>

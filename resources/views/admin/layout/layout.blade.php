@@ -138,21 +138,21 @@
 	<script src="https://cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
 	@include('ckfinder::setup')
 	<script>
-		CKEDITOR.replace('description', {
+		CKEDITOR.replace('tongquan', {
     		filebrowserBrowseUrl: "{{ route('ckfinder_browser') }}",
 			language: 'vi',
 		});
 
-		CKEDITOR.replace('vitriduan', {
+		CKEDITOR.replace('vitri', {
 			filebrowserBrowseUrl: "{{ route('ckfinder_browser') }}"
 		});
-		CKEDITOR.replace('matbangduan', {
+		CKEDITOR.replace('matbang', {
 			filebrowserBrowseUrl: "{{ route('ckfinder_browser') }}"
 		});
-		CKEDITOR.replace('tienichduan', {
+		CKEDITOR.replace('tienich', {
 			filebrowserBrowseUrl: "{{ route('ckfinder_browser') }}"
 		});
-		CKEDITOR.replace('thanhtoanduan', {
+		CKEDITOR.replace('thanhtoan', {
 			filebrowserBrowseUrl: "{{ route('ckfinder_browser') }}"
 		});
 	</script>

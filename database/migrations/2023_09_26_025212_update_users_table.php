@@ -13,7 +13,7 @@ return new class extends Migration
     {
         //
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_img');
+            $table->unsignedBigInteger('id_img')->nullable();
             $table->foreign('id_img')->references('id_img')->on('img');
         });
     }

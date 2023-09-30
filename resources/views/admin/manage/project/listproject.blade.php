@@ -45,45 +45,27 @@ Danh sách dự án
 							</tr>
 						</thead>
 						<tbody>
+							@foreach($project as $pr)
 							<tr>
-								<td>1</td>
-								<td><img src="https://masterisehomes.com/masteri-centre-point/themes/storefront/public/assets/images/du-an-masteri-centre-point-masterise-homes_1920x1080.png"></td>
-								<td>Masteries Center Point</td>
-								<td>Thôn tri c1, Dlie Yang, Eahleo, DAK LAK</td>
-								<td>Căn hộ</td>
-								<td>Đang nhận ký gửi</td>
-								<td>Đang bán</td>
+								<td>{{$pr->id_pro}}</td>
+								<td><img src="/{{$pr->img}}"></td>
+								<td>{{$pr->name_product}}</td>
+								<td>{{$pr->address}}</td>
+								<td>{{$pr->name}}</td>
+								<td>
+									@if($pr->kygui == 0)
+										Không nhận ký gửi
+									@else
+										Đang nhận ký gửi
+									@endif
+								</td>
+								<td>{{$pr->id_status}}</td>
 								<td class="">	
 									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
 									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
 								</td>
 							</tr>
-                            <tr>
-								<td>1</td>
-								<td><img src="https://masterisehomes.com/masteri-centre-point/themes/storefront/public/assets/images/du-an-masteri-centre-point-masterise-homes_1920x1080.png"></td>
-								<td>Masteries Center Point</td>
-								<td>Thôn tri c1, Dlie Yang, Eahleo, DAK LAK</td>
-								<td>Căn hộ</td>
-								<td>Đang nhận ký gửi</td>
-								<td>Đang bán</td>
-								<td class="">	
-									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
-									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
-								</td>
-							</tr>
-                            <tr>
-								<td>1</td>
-								<td><img src="https://masterisehomes.com/masteri-centre-point/themes/storefront/public/assets/images/du-an-masteri-centre-point-masterise-homes_1920x1080.png"></td>
-								<td>Masteries Center Point</td>
-								<td>Thôn tri c1, Dlie Yang, Eahleo, DAK LAK</td>
-								<td>Căn hộ</td>
-								<td>Đang nhận ký gửi</td>
-								<td>Đang bán</td>
-								<td class="">	
-									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
-									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
-								</td>
-							</tr>
+							@endforeach
 						</tbody>
 					</table>
 				</div>
