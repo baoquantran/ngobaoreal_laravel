@@ -19,16 +19,4 @@ class AdminController extends Controller
         
     }
 
-    function login(){
-        return view('admin.login');
-    }
-
-    function login_post(Request $request){
-              
-        
-    }
-
-    function logout(){
-
-    }
 }

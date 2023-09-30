@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StatusProjectController;
@@ -39,7 +40,10 @@ Route::get('/themarq',[Controller::class,'themarq']);
 Route::get('/delasol',[Controller::class,'delasol']);
 
 
-
+//----------------------------Dang nhap----------------------------------------------
+Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::post('/login',[AuthController::class,'login_post'])->name('login.submit');
+Route::get('/logout',[AuthController::class,'logout']);
 
 
 //----------------------------------------admin----------------------------------
@@ -47,10 +51,7 @@ Route::group(['prefix' => 'dashboard'], function() {
     Route::get('/',[AdminController::class,'index']);
 
 
-    //----------------------------Dang nhap----------------------------------------------
-    Route::get('/login',[AdminController::class,'login']);
-    Route::post('/login',[AdminController::class,'login_post']);
-    Route::get('/loguot',[AdminController::class,'logout']);
+    
 
 
     //----------------------------Project----------------------------------------------
