@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
+// use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class StatusProjectController extends Controller
 {
@@ -11,7 +13,7 @@ class StatusProjectController extends Controller
      */
     public function index()
     {
-        return view('admin.manage.statusproject.list_status_project');
+        return view('admin.manage.statusproject.list');
     }
 
     /**
@@ -19,7 +21,7 @@ class StatusProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.manage.statusproject.create_status_project');
+        return view('admin.manage.statusproject.create');
     }
 
     /**
@@ -51,7 +53,7 @@ class StatusProjectController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.manage.statusproject.update_status_project');
+        return view('admin.manage.statusproject.update');
     }
 
     /**

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="images/ngobaoreal2.png" />
+	<link rel="icon" type="image/png" href="/admin/images/ngobaoreal2.png" />
 
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
 	<title>@yield('tieudetrang')</title>
 </head>
 
-<body style="background-color: #eee;">
+<body style="background: #eee">
 
 
 	<!-- SIDEBAR -->
@@ -26,54 +26,85 @@
 			<img class="logo_admin" src="/admin/images/ngobaoreal2.png" alt="">
 		</a>
 		<ul class="side-menu top">
-			<li>
-				<a class="nav-link" href="/dashboard">
+			<li class="{{ Route::currentRouteName() === 'dashboard' ? 'active' : '' }}">
+				<a class="nav-link" href="{{ route('dashboard') }}">
 					<i class='bx bxs-dashboard'></i>
 					<span class="text">Bảng điều khiển</span>
 				</a>
 			</li>
-			<li>
+			<li class="">
+				<a class="nav-link" href="#">
+					<i class='bx bxs-doughnut-chart'></i>
+					<span class="text">Quản lý danh mục dự án</span>
+				</a>
+			</li>
+			<li class="{{ Route::currentRouteName() === 'project.index' ? 'active' : '' }}">
 				<a class="nav-link" href="{{ route('project.index') }}">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Quản lý dự án</span>
 				</a>
 			</li>
-			<li>
+			<li class="{{ Route::currentRouteName() === 'status-project.index' ? 'active' : '' }}">
 				<a class="nav-link" href="{{ route('status-project.index') }}">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Quản lý trạng thái dự án</span>
 				</a>
 			</li>
-			<li>
+			<li class="{{ Route::currentRouteName() === 'type-post.index' ? 'active' : '' }}">
+				<a class="nav-link" href="{{ route('type-post.index') }}">
+					<i class='bx bxs-book'></i>
+					<span class="text">Quản lý danh mục bài viết</span>
+				</a>
+			</li>
+			<li class="{{ Route::currentRouteName() === 'post.index' ? 'active' : '' }}">
 				<a class="nav-link" href="{{ route('post.index') }}">
-					<i class='bx bxs-shopping-bag-alt'></i>
+					<i class='bx bxs-book'></i>
 					<span class="text">Quản lý bài viết</span>
 				</a>
 			</li>
-			<li>
-				<a class="nav-link" href="{{ route('type-post.index') }}">
-					<i class='bx bxs-shopping-bag-alt'></i>
-					<span class="text">Quản lý loại tin</span>
-				</a>
-			</li>
-			<li>
+			
+			<li >
 				<a class="nav-link" href="#">
 					<i class='bx bxs-group'></i>
+					<span class="text">Quản lý tài khoản</span>
+				</a>
+			</li>
+			<li >
+				<a class="nav-link" href="#">
+					<i class='bx bxs-message-dots'></i>
 					<span class="text">Quản lý ký gửi</span>
 				</a>
 			</li>
-			<li>
+			<li >
 				<a class="nav-link" href="#">
 					<i class='bx bxs-message-dots'></i>
 					<span class="text">Quản lý tư vấn</span>
 				</a>
 			</li>
-			<li>
+			<li >
 				<a class="nav-link" href="#">
 					<i class='bx bxs-message-dots'></i>
 					<span class="text">Quản lý báo giá</span>
 				</a>
 			</li>
+			{{-- <li >
+				<a class="nav-link" href="#">
+					<i class='bx bxs-message-dots'></i>
+					<span class="text">Quản lý danh mục slide</span>
+				</a>
+			</li>
+			<li >
+				<a class="nav-link" href="#">
+					<i class='bx bxs-message-dots'></i>
+					<span class="text">Quản lý slide</span>
+				</a>
+			</li>
+			<li >
+				<a class="nav-link" href="#">
+					<i class='bx bx-user-plus'></i>
+					<span class="text">Tuyển dụng</span>
+				</a>
+			</li> --}}
 			
 		</ul>
 		<ul class="side-menu">
@@ -89,6 +120,12 @@
 					<span class="text">Đăng xuất</span>
 				</a>
 			</li>
+			{{-- <li>
+				<a href="" class="logout">
+					<i class='bx bx-power-off'></i>
+					<span class="text">Tắt nguồn</span>
+				</a>
+			</li> --}}
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
@@ -100,7 +137,7 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu'></i>
-			<a href="#" class="nav-link">Quản lý trang web - Ngô Bảo Real</a>
+			<a href="#" class="nav-link">Quản lý Website - Admin: Ngô Bảo Real</a>
 			<form action="#">
 				<div class="form-input">
 					<input type="search" placeholder="Tìm kiếm...">

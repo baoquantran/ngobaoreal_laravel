@@ -11,7 +11,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('admin.manage.project.listproject');
+        return view('admin.manage.project.list');
     }
 
     /**
@@ -20,7 +20,7 @@ class ProjectController extends Controller
     public function create()
     {
         
-        return view('admin.manage.project.create_project');
+        return view('admin.manage.project.create');
     }
 
     /**

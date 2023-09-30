@@ -11,7 +11,7 @@ class TypepostController extends Controller
      */
     public function index()
     {
-        return view('admin.manage.typepost.list_typepost');
+        return view('admin.manage.typepost.list');
     }
 
     /**
@@ -19,7 +19,7 @@ class TypepostController extends Controller
      */
     public function create()
     {
-        return view('admin.manage.typepost.create_typepost');
+        return view('admin.manage.typepost.create');
     }
 
     /**
@@ -43,7 +43,7 @@ class TypepostController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.manage.typepost.update_typepost');
+        return view('admin.manage.typepost.update');
     }
 
     /**
