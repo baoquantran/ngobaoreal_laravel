@@ -46,13 +46,13 @@ Danh sách trạng thái dự án
 							@foreach($status as $st)
 							<tr>
 								<td>{{$st->id_status}}</td>
-								<td>{{$st->name}}</td>
+								<td>{{$st->name_status}}</td>
 								<td class="">	
 									<a class="btn btn-outline-primary  m-1" href="{{route('status-project.edit',$st->id_status)}}"><i class="bi bi-pencil-square"></i></a>
 									<!-- <a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-trash3"></i></a> -->
 									<form class="d-inline" action="{{ route('status-project.destroy', $st->id_status) }}" method="POST">
   									@csrf @method('DELETE')
-									<button type='submit' onclick="return confirm('Xóa hả')" class="btn btn-outline-danger">
+									<button type='submit' onclick="return confirm('Xác nhận xóa')" class="btn btn-outline-danger">
 									<i class="bi bi-trash3"></i>
 									</button>
 									</form>

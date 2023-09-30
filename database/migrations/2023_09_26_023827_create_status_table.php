@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('status', function (Blueprint $table) {
             $table->id('id_status');
-            $table->string('name',50);
+            $table->string('name_status',50);
             $table->boolean('hidden')->default(1);
             $table->timestamps();
         });

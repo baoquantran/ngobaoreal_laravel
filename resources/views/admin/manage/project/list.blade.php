@@ -49,9 +49,9 @@ Danh sách dự án
 							<tr>
 								<td>{{$pr->id_pro}}</td>
 								<td><img src="/{{$pr->img}}"></td>
-								<td>{{$pr->name_product}}</td>
-								<td>{{$pr->address}}</td>
 								<td>{{$pr->name}}</td>
+								<td>{{$pr->address}}</td>
+								<td>{{$pr->name_room}}</td>
 								<td>
 									@if($pr->kygui == 0)
 										Không nhận ký gửi
@@ -59,7 +59,7 @@ Danh sách dự án
 										Đang nhận ký gửi
 									@endif
 								</td>
-								<td>{{$pr->id_status}}</td>
+								<td>{{$pr->name_status}}</td>
 								<td class="">	
 									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
 									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>

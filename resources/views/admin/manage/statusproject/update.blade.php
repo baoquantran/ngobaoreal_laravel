@@ -29,7 +29,7 @@ Thêm trạng thái dự án
 					@csrf @method('PUT')
 						<div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Tên trạng thái</label>
-							<input type="text" name="name" class="form-control p" value="{{$status->name}}" id="exampleInputEmail1"
+							<input type="text" name="name_status" class="form-control p" value="{{$status->name_status}}" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-12">

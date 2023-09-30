@@ -11,7 +11,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.manage.user.list_user');
+        return view('admin.manage.user.list');
     }
 
     /**
@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.manage.user.create_user');
+        return view('admin.manage.user.create');
     }
 
     /**
@@ -43,7 +43,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.manage.user.update_user');
+        return view('admin.manage.user.update');
     }
 
     /**

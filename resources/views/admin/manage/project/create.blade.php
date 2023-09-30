@@ -25,7 +25,7 @@ Danh sách dự án
 					@csrf
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Tên dự án</label>
-							<input type="text" class="form-control p" name=""name id="exampleInputEmail1"
+							<input type="text" class="form-control p" name="name" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
@@ -47,7 +47,7 @@ Danh sách dự án
 							<label for="exampleInputPassword1" class="form-label">Trạng thái</label>
 							<select class="form-control" name="id_status" id="">
 								@foreach($status as $st)
-								<option name ="id_status" value="{{$st->id_status}}">{{$st->name}}</option>
+								<option name ="id_status" value="{{$st->id_status}}">{{$st->name_status	}}</option>
 								@endforeach
 							</select>
 						</div>

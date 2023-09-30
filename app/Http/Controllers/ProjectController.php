@@ -26,10 +26,11 @@ class ProjectController extends Controller
     public function index()
     {
         $project = DB::table('product')
-        ->join('status','product.id_status','=','status.id_status')
-        ->select('product.*','status.*','product.name AS name_product')
-        ->get();
-        return view('admin.manage.project.listproject' ,compact('project'));
+    ->join('room', 'product.id_room', '=', 'room.id_room')
+    ->join('status', 'product.id_status', '=', 'status.id_status')
+    ->select('product.id_pro', 'product.img', 'product.name', 'product.address', 'room.name AS name_room', 'name_status','product.kygui')
+    ->get();
+        return view('admin.manage.project.list',compact('project'));
     }
 
     /**
@@ -38,7 +39,9 @@ class ProjectController extends Controller
     public function create()
     {
 
-        return view('admin.manage.project.create_project');
+       
+        
+        return view('admin.manage.project.create');
     }
 
     /**
