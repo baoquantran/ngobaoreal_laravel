@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use Illuminate\Http\Request;
 
 class StatusProjectController extends Controller
@@ -27,7 +27,15 @@ class StatusProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request['name'];
+        $hidden = $request['hidden'];
+
+        DB::table('status')
+        ->insert([
+            'name'=> $name,
+            'hidden' =>$hidden
+        ]);
+        return redirect('/dashboard/status-project');
     }
 
     /**

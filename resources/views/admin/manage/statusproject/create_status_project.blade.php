@@ -21,24 +21,16 @@ Thêm trạng thái dự án
 			</div>
 		<div class="table-data">
 				<div class="order">
-					<form class="row">
+					<form class="row" method="post" action="{{route('status-project.store')}}"> @csrf
 						<div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Tên trạng thái</label>
-							<input type="text" class="form-control p" id="exampleInputEmail1"
+							<input type="text" class="form-control p" name="name" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-							<label class="form-check-label" for="flexRadioDefault1">
-							  Ẩn
-							</label>
-						  </div>
-						  <div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-							<label class="form-check-label" for="flexRadioDefault2">
-							  Hiện
-							</label>
-						  </div>
+						<div class='mb-3 px-2'> 
+					        <input name="hidden" type="radio" value="0"> Ẩn
+					        <input name="hidden" type="radio" value="1" checked> Hiện
+					   	</div>
 						<div class="col-md-2 col-12 m-auto">
 							<button type="submit" class="btn btn-primary">Lưu dự án</button>
 						</div>

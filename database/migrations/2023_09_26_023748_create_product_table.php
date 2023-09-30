@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('to_price',50);
             $table->string('acreage',50)->nullable();
             $table->string('img',300);
+            $table->string('local',300);
             $table->string('slug', 255)->nullable();
             $table->string('content', 500)->nullable();
             $table->boolean('hide')->default(1);
