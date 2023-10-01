@@ -9,6 +9,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\StatusProjectController;
 use App\Http\Controllers\TypepostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\baoGiaController;
+use App\Http\Controllers\kyGuiController;
+use App\Http\Controllers\tuVanController;
 
 
 
@@ -69,6 +72,14 @@ Route::group(['prefix' => 'dashboard'], function() {
     //----------------------------User----------------------------------------------
     
     Route::resource('user',UserController::class);
+
+
+
+
+    Route::resource('baogia',baoGiaController::class);
+    Route::resource('kygui',kyGuiController::class);
+    Route::resource('tuvan',tuVanController::class);
+
 });
 
 Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')

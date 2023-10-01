@@ -81,8 +81,8 @@
 					<span class="text">Quản lý tư vấn</span>
 				</a>
 			</li>
-			<li >
-				<a class="nav-link" href="#">
+			<li class="{{ Route::currentRouteName() === 'baogia.index' ? 'active' : '' }}">
+				<a class="nav-link" href="{{ route('baogia.index') }}">
 					<i class='bx bxs-message-dots'></i>
 					<span class="text">Quản lý báo giá</span>
 				</a>
@@ -115,9 +115,9 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{ url('/logout') }}" class="logout">
+				<a href="{{ url('/') }}" class="logout">
 					<i class='bx bxs-log-out-circle'></i>
-					<span class="text">Đăng xuất</span>
+					<span class="text">Quay lại client</span>
 				</a>
 			</li>
 			{{-- <li>
@@ -160,7 +160,7 @@
 				<ul class="profile-link">
 					<li><a class="nav-link" href="#"><i class='bx bxs-user-circle icon'></i> Hồ sơ</a></li>
 					<li><a class="nav-link" href="#"><i class='bx bxs-cog'></i> Cài đặt</a></li>
-					<li><a class="nav-link" href="#"><i class='bx bxs-log-out-circle'></i> Đăng xuất</a></li>
+					<li><a class="nav-link" href="{{ url('/logout') }}"><i class='bx bxs-log-out-circle'></i> Đăng xuất</a></li>
 				</ul>
 			</div>
 		</nav>

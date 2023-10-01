@@ -53,9 +53,9 @@ class StatusProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $request, string $id)
     {
-        $status = \DB::table('status')->where('id_status', $id)->first();
+        $status = DB::table('status')->where('id_status', $id)->first();
         if ($status==null){
             $request->session()->flash('thongbao','Không có loại này: '. $id);
             return redirect('/dashboard/status-project');
@@ -71,7 +71,7 @@ class StatusProjectController extends Controller
     {
         $name_status = $request['name_status'];
         $hidden = (int) $request['hidden'];
-        \DB::table('status')->where('id_status', $id)
+        DB::table('status')->where('id_status', $id)
         ->update(['name_status'=>$name_status,'hidden'=>$hidden]);
         return redirect('/dashboard/status-project');
     }
@@ -81,12 +81,12 @@ class StatusProjectController extends Controller
      */
     public function destroy( Request $request, string $id)
     {
-        $sosp = \DB::table('product')->where('id_pro', $id)->count();
+        $sosp = DB::table('product')->where('id_pro', $id)->count();
         if ($sosp>=0) {
             $request->session()->flash('thongbao','Không xóa trạng thái, vì có dự án trong trạng thái này ');
             return redirect('/dashboard/status-project');
         }else {
-            \DB::table('status')->where('id_status', $id)->delete();
+            DB::table('status')->where('id_status', $id)->delete();
             $request->session()->flash('thongbao', 'Đã xóa loại');
             return redirect('/dashboard/status-project');
         }
