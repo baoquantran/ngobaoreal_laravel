@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StatusProjectController;
 use App\Http\Controllers\TypepostController;
@@ -56,6 +57,10 @@ Route::group(['prefix' => 'dashboard'], function() {
     //----------------------------Project----------------------------------------------
 
     Route::resource('project',ProjectController::class);
+
+    //----------------------------Project----------------------------------------------
+
+    Route::resource('room',RoomController::class);
 
     //----------------------------status_project----------------------------------------------
     

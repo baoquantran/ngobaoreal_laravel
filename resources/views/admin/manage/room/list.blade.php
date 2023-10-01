@@ -1,26 +1,26 @@
 @extends('admin.layout.layout')
 @section('tieudetrang')
-Danh sách loại tin
+Danh sách trạng thái dự án
 @endsection
 @section('noidung')
     	<!-- MAIN -->
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Danh sách loại tin</h1>
+					<h1>Danh sách trạng thái dự án</h1>
 					<ul class="breadcrumb">
 						<li>
 							<a href="#">Bảng điều khiển</a>
 						</li>
 						<li><i class='bx bx-chevron-right'></i></li>
 						<li>
-							<a class="active" href="#">Danh sách loại tin</a>
+							<a class="active" href="#">Danh sách trạng thái dự án</a>
 						</li>
 					</ul>
 				</div>
-				<a href="{{ route('type-post.create') }}" class="btn-download nav-link">
+				<a href="{{ route('room.create') }}" class="btn-download nav-link">
                     <i class="bi bi-plus-circle-dotted"></i>
-					<span class="text">Thêm loại tin mới</span>
+					<span class="text">Thêm trạng thái mới</span>
 				</a>
 			</div>
 
@@ -43,14 +43,14 @@ Danh sách loại tin
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($typepost as $tp)
+							@foreach($room as $r)
 							<tr>
-								<td>{{$tp->id_cp}}</td>
-								<td>{{$tp->name}}</td>
+								<td>{{$r->id_room}}</td>
+								<td>{{$r->name}}</td>
 								<td class="">	
-									<a class="btn btn-outline-primary  m-1" href="{{route('type-post.edit',$tp->id_cp)}}"><i class="bi bi-pencil-square"></i></a>
+									<a class="btn btn-outline-primary  m-1" href="{{route('room.edit',$r->id_room)}}"><i class="bi bi-pencil-square"></i></a>
 									<!-- <a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-trash3"></i></a> -->
-									<form class="d-inline" action="{{ route('type-post.destroy', $tp->id_cp) }}" method="POST">
+									<form class="d-inline" action="{{ route('room.destroy', $r->id_room) }}" method="POST">
   									@csrf @method('DELETE')
 									<button type='submit' onclick="return confirm('Xác nhận xóa')" class="btn btn-outline-danger">
 									<i class="bi bi-trash3"></i>

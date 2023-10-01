@@ -32,45 +32,41 @@ Danh sách tin
 						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
+					@if(Session::exists('thongbao'))
+  					<h4 class="alert alert-info text-center">{{ Session::get('thongbao') }}</h4>
+					@endif
 						<thead>
 							<tr>
-								<th>STT</th>
+								<th>ID tin</th>
 								<th>Ảnh</th>
 								<th>Tiêu đề</th>
 								<th>Ngày đăng</th>
+								<th>Ngày cập nhật</th>
 								<th>Loại</th>
-								<th>Lượt xem</th>
 								<th>Trạng thái</th>
 								<th>Cài đặt</th>
 							</tr>
 						</thead>
 						<tbody>
+							@foreach($post as $p)
 							<tr>
-								<td>1</td>
-								<td><img src="https://masterisehomes.com/masteri-centre-point/themes/storefront/public/assets/images/du-an-masteri-centre-point-masterise-homes_1920x1080.png"></td>
-								<td>Một ngày sống đẹp</td>
-								<td>27/9/2023</td>
-								<td>Tin tức</td>
-								<td>13</td>
+								<td>{{$p->id_post}}</td>
+								<td><img src="/{{$p->img}}"></td>
+								<td>{{$p->title}}</td>
+								<td>{{$p->new_created_at}}</td>
+								<td>{{$p->new_updated_at}}</td>
+								<td>{{$p->name}}</td>
 								<td>Đang ẩn</td>
 								<td class="">	
-									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
-									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
+								<a class="btn btn-outline-danger  m-1" href="{{route('post.edit', $p->id_post)}}"><i class="bi bi-pencil-square"></i></a>
+									
+									<form class="d-inline" action="{{ route('post.destroy', $p->id_post) }}" method="POST">
+										@csrf @method('DELETE')
+										<button type='submit' onclick="return confirm('Xác nhận xóa')" class="btn btn-outline-primary"><i class="bi bi-trash3"></i></button>
+									</form>
 								</td>
 							</tr>
-							<tr>
-								<td>1</td>
-								<td><img src="https://masterisehomes.com/masteri-centre-point/themes/storefront/public/assets/images/du-an-masteri-centre-point-masterise-homes_1920x1080.png"></td>
-								<td>Một ngày sống đẹp</td>
-								<td>27/9/2023</td>
-								<td>Tin tức</td>
-								<td>13</td>
-								<td>Đang ẩn</td>
-								<td class="">	
-									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
-									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
-								</td>
-							</tr>
+							@endforeach
 						</tbody>
 					</table>
 				</div>

@@ -32,8 +32,8 @@
 					<span class="text">Bảng điều khiển</span>
 				</a>
 			</li>
-			<li class="">
-				<a class="nav-link" href="#">
+			<li class="{{ Route::currentRouteName() === 'room.index' ? 'active' : '' }}">
+				<a class="nav-link" href="{{ route('room.index') }}">
 					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Quản lý danh mục dự án</span>
 				</a>
@@ -63,8 +63,8 @@
 				</a>
 			</li>
 			
-			<li >
-				<a class="nav-link" href="#">
+			<li class="{{ Route::currentRouteName() === 'user.index' ? 'active' : '' }}">
+				<a class="nav-link" href="{{ route('user.index') }}">
 					<i class='bx bxs-group'></i>
 					<span class="text">Quản lý tài khoản</span>
 				</a>

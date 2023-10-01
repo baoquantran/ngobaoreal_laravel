@@ -32,6 +32,9 @@ Danh sách dự án
 						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
+					@if(Session::exists('thongbao'))
+  					<h4 class="alert alert-info text-center">{{ Session::get('thongbao') }}</h4>
+					@endif
 						<thead>
 							<tr>
 								<th>STT</th>
@@ -43,17 +46,23 @@ Danh sách dự án
 							</tr>
 						</thead>
 						<tbody>
+							@foreach($user as $u)
 							<tr>
-								<td>1</td>
-								<td class="anhuser"><img src="https://masterisehomes.com/masteri-centre-point/themes/storefront/public/assets/images/du-an-masteri-centre-point-masterise-homes_1920x1080.png"></td>
-								<td>Masteries Center Point</td>
-								<td>Thôn tri c1, Dlie Yang, Eahleo, DAK LAK</td>
-								<td>Căn hộ</td>
+								<td>{{$u->id_user}}</td>
+								<td class="anhuser"><img src="/{{$u->img}}"></td>
+								<td>{{$u->name_users}}</td>
+								<td>{{$u->address}}</td>
+								<td>{{$u->name_role}}</td>
 								<td class="">	
-									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
-									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
+								<a class="btn btn-outline-danger  m-1" href="{{route('user.edit', $u->id_user)}}"><i class="bi bi-pencil-square"></i></a>
+									
+									<form class="d-inline" action="{{ route('user.destroy', $u->id_user) }}" method="POST">
+										@csrf @method('DELETE')
+										<button type='submit' onclick="return confirm('Xác nhận xóa')" class="btn btn-outline-primary"><i class="bi bi-trash3"></i></button>
+									</form>
 								</td>
 							</tr>
+							@endforeach
 						</tbody>
 					</table>
 				</div>

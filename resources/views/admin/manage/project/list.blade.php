@@ -32,6 +32,9 @@ Danh sách dự án
 						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
+					@if(Session::exists('thongbao'))
+					<h4 class="alert alert-info text-center">{{ Session::get('thongbao') }}</h4>
+					@endif
 						<thead>
 							<tr>
 								<th>STT</th>
@@ -61,8 +64,13 @@ Danh sách dự án
 								</td>
 								<td>{{$pr->name_status}}</td>
 								<td class="">	
-									<a class="btn btn-outline-primary  m-1" href=""><i class="bi bi-trash3"></i></a>
-									<a class="btn btn-outline-danger  m-1" href=""><i class="bi bi-pencil-square"></i></a>
+									
+									<a class="btn btn-outline-danger  m-1" href="{{route('project.edit', $pr->id_pro)}}"><i class="bi bi-pencil-square"></i></a>
+									
+									<form class="d-inline" action="{{ route('project.destroy', $pr->id_pro) }}" method="POST">
+										@csrf @method('DELETE')
+										<button type='submit' onclick="return confirm('Xác nhận xóa')" class="btn btn-outline-primary"><i class="bi bi-trash3"></i></button>
+									</form>
 								</td>
 							</tr>
 							@endforeach

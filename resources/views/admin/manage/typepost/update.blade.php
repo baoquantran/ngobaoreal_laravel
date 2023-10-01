@@ -1,49 +1,41 @@
 @extends('admin.layout.layout')
 @section('tieudetrang')
-Sửa loại tin
+Cập nhật dự án
 @endsection
 @section('noidung')
     	<!-- MAIN -->
 		<main>
 		<div class="head-title">
 				<div class="left">
-					<h1>Sửa loại tin</h1>
+					<h1>Thêm dự án</h1>
 					<ul class="breadcrumb">
 						<li>
 							<a href="#">Bảng điều khiển</a>
 						</li>
 						<li><i class='bx bx-chevron-right'></i></li>
 						<li>
-							<a class="active" href="#">Sửa mới loại tin</a>
+							<a class="active" href="#">Cập nhật loại tin</a>
 						</li>
 					</ul>
 				</div>
 				<a href="{{ route('type-post.create') }}" class="btn-download nav-link">
                     <i class="bi bi-plus-circle-dotted"></i>
-					<span class="text">Thêm mới loại tin</span>
+					<span class="text">Thêm loại tin mới</span>
 				</a>
 			</div>
 		<div class="table-data">
 				<div class="order">
-					<form class="row">
+					<form class="row" method="post" action="{{route('type-post.update', $typepost->id_cp)}}">
+					@csrf @method('PUT')
 						<div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Tên loại tin</label>
-							<input type="text" class="form-control p" id="exampleInputEmail1"
+							<input type="text" name="name" class="form-control p" value="{{$typepost->name}}" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-							<label class="form-check-label" for="flexRadioDefault1">
-							  Ẩn
-							</label>
-						  </div>
-						  <div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-							<label class="form-check-label" for="flexRadioDefault2">
-							  Hiện
-							</label>
-						  </div>
-						<div class="col-md-2 col-12 m-auto">
+						<div class="mb-3 col-md-12">
+							<input name="hidden" type="radio" value="0" {{ $typepost->hidden==0? "checked":"" }} > Ẩn
+							<input name="hidden" type="radio" value="1" {{ $typepost->hidden==1? "checked":"" }} > Hiện
+						</div class="mb-3 col-md-2">
 							<button type="submit" class="btn btn-primary">Lưu loại tin</button>
 						</div>
 					</form>

@@ -21,44 +21,47 @@ Thêm tài khoản người dùng
 			</div>
 		<div class="table-data">
 				<div class="order">
-					<form class="row">
+					<form class="row" action="{{route('user.store')}}" method="post" enctype="multipart/form-data">
+						@csrf
+						<div class="mb-3 col-md-12 col-12">
+							<label for="exampleInputEmail1" class="form-label">Chọn ảnh</label>
+							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new">
+						</div>
 						<div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Họ và tên</label>
-							<input type="text" class="form-control p" id="exampleInputEmail1"
+							<input type="text" class="form-control p" name="name" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
                         <div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Số điện thoại</label>
-							<input type="text" class="form-control p" id="exampleInputEmail1"
+							<input type="text" class="form-control p" name="phone" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
                         <div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Email</label>
-							<input type="text" class="form-control p" id="exampleInputEmail1"
+							<input type="email" class="form-control p" name="email" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
                         <div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Địa chỉ</label>
-							<input type="text" class="form-control p" id="exampleInputEmail1"
+							<input type="text" class="form-control p" name="address" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
                         <div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Mật khẩu</label>
-							<input type="text" class="form-control p" id="exampleInputEmail1"
+							<input type="password" class="form-control p" name="password" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-							<label class="form-check-label" for="flexRadioDefault1">
-							  Admin
-							</label>
-						  </div>
-						  <div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-							<label class="form-check-label" for="flexRadioDefault2">
-							  Người viết bài
-							</label>
-						  </div>
+						
+						<div class="mb-3 col-md-12 col-12">
+							<label for="exampleInputPassword1" class="form-label">Chức</label>
+							<select class="form-control" name="role_id" id="">
+								@foreach($role as $r)
+								<option name = "role_id" value="{{$r->id}}">{{$r->name}}</option>
+								@endforeach
+							</select>
+						</div>
+
 						<div class="col-md-2 col-12 m-auto">
 							<button type="submit" class="btn btn-primary">Thêm</button>
 						</div>

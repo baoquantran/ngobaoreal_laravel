@@ -6,7 +6,7 @@ use App\Models\ProductModel;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\DB;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\View;
 
 class ProjectController extends Controller
 {
@@ -39,9 +39,6 @@ class ProjectController extends Controller
      */
     public function create()
     {
-
-
-
         return view('admin.manage.project.create');
     }
 
@@ -90,9 +87,15 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        return view('admin.manage.project.update_project');
+    public function edit(Request $request, string $id)
+    {   
+        
+        $product = DB::table('product')->where('id_pro', $id)->first();
+        if ($product==null){
+            $request->session()->flash('thongbao','Không có sản phẩm này: '. $id);
+            return redirect('/dashboard/project');
+        }
+        return view('admin.manage.project.update',compact('product'));
     }
 
     /**
@@ -100,14 +103,48 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $pro = ProductModel::find($id);
+        $pro->name = trim(strip_tags($request['name']));
+        $pro->address = $request['address'];
+        $pro->slug = $request['slug'];
+        $pro->from_price = (int) $request['from_price'];
+        $pro->to_price = (int) $request['to_price'];
+        $pro->hide = (int) $request['hide'];
+        $pro->id_room = $request['id_room'];
+        $pro->id_status = $request['id_status'];
+        $pro->tongquan = $request['tongquan'];
+        $pro->vitri = $request['vitri'];
+        $pro->tienich = $request['tienich'];
+        $pro->matbang = $request['matbang'];
+        $pro->thanhtoan = $request['thanhtoan'];
+        $pro->kygui = $request['kygui'];
+
+        if ($request->hasFile('img__new')) {
+            $file = $request->file('img__new');
+            $extension = $file->getClientOriginalExtension();
+            $file_name = time() . '.' . $extension;
+            $file->move('admin/uploads/images/products/', $file_name);
+            $pro->img = 'admin/uploads/images/products/' . $file_name;
+        }
+
+        $pro->save();
+
+        return redirect(route('project.index'))->with('status', 'Thêm sản phẩm thành công');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
-        //
-    }
+
+        $sosp = \DB::table('product')->where('id_pro', $id)->count();
+        if ($sosp==0) {
+            $request->session()->flash('thongbao','Sản phẩm không tồn tại');
+            return redirect('/dashboard/project');
+        }
+        \DB::table('product')->where('id_pro', $id)->delete();
+        $request->session()->flash('thongbao', 'Đã xóa sản phẩm');
+        return redirect('/dashboard/project');
+        }
 }
