@@ -49,7 +49,7 @@
 
 
         <!-- Navbar Start -->
-        @include('user.menukygui')
+        @include('client.kygui.menukygui')
         <!-- Navbar End -->
 
 
@@ -65,7 +65,7 @@
                 <!-- Phần Form nhập thông tin doanh nghiệp -->
                         <div class="col-lg-6 col-md-12 d-flex justify-content-center mt-5">
                             <form class="kyguiform">
-                                <h1 class="text-white">Ký gửi và tư vấn</h1>
+                                <h1 class="text-white">Ký gửi và tư vấna</h1>
                                 <div class="mb-3">
                                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập Họ">
                                 </div>

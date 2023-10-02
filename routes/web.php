@@ -16,7 +16,9 @@ use App\Http\Controllers\tuVanController;
 
 
 
-Route::get('/',[Controller::class,'index']);
+Route::get('/',[Controller::class,'index'])->name('/');
+// Route::post('/',[baoGiaController::class,'baogia_'])->name('baogia');
+
 
 Route::get('/gioi-thieu',[Controller::class,'gioithieu']);
 
@@ -28,13 +30,13 @@ Route::get('/du-an-detail',[Controller::class,'duandetail']);
 
 Route::get('/tuyen-dung',[Controller::class,'tuyendung']);
 
-Route::get('/lien-he',[Controller::class,'lienhe']);
+Route::get('/lien-he',[Controller::class,'lienhe'])->name('lien-he');
 
 Route::get('/ky-gui',[Controller::class,'kygui']);
 
 Route::get('/lumiere-boulevard',[Controller::class,'lumiereboulevard']);
 
-Route::get('/masterise-central-point',[Controller::class,'masterisecentralpoint']);
+Route::get('/masterise-central-point',[Controller::class,'masterisecentralpoint'])->name('MASTERISECENTERPOINT');
 
 Route::get('/lumiere-riverside',[Controller::class,'lumimeRiverside']);
 
@@ -75,10 +77,39 @@ Route::group(['prefix' => 'dashboard'], function() {
 
 
 
+    Route::resource('baogia',baoGiaController::class)->names([
+        'index' => 'baogia.index',
+        'create' => 'baogia.create',
+        'store' => 'baogia.store',
+        'show' => 'baogia.show',
+        'edit' => 'baogia.edit',
+        'update' => 'baogia.update',
+        'destroy' => 'baogia.destroy',
+    ]);
+    Route::patch('/baogia/{id}/check',[baoGiaController::class, 'check'])->name('baogia.check');
 
-    Route::resource('baogia',baoGiaController::class);
-    Route::resource('kygui',kyGuiController::class);
-    Route::resource('tuvan',tuVanController::class);
+    Route::resource('kygui',kyGuiController::class)->names([
+        'index' => 'kygui.index',
+        'create' => 'kygui.create',
+        'store' => 'kygui.store',
+        'show' => 'kygui.show',
+        'edit' => 'kygui.edit',
+        'update' => 'kygui.update',
+        'destroy' => 'kygui.destroy',
+    ]);
+    Route::patch('/kygui/{id}/check',[kyGuiController::class, 'check'])->name('kygui.check');
+
+    Route::resource('tuvan',tuVanController::class)->names([
+        'index' => 'tuvan.index',
+        'create' => 'tuvan.create',
+        'store' => 'tuvan.store',
+        'show' => 'tuvan.show',
+        'edit' => 'tuvan.edit',
+        'update' => 'tuvan.update',
+        'destroy' => 'tuvan.destroy',
+    ]);;
+    Route::patch('/tuvan/{id}/check',[tuVanController::class, 'check'])->name('tuvan.check');
+
 
 });
 

@@ -52,6 +52,11 @@ li {
 	list-style: none;
 }
 
+.custom-style {
+    width: 150px; /* Điều chỉnh độ rộng theo ý muốn */
+    display: inline-block; /* Để các thẻ span xuất hiện trên cùng một hàng */
+    text-align: center; /* Căn giữa nội dung bên trong thẻ span */
+}
 /* label {
 	display: block;
 	margin-bottom: 10px;

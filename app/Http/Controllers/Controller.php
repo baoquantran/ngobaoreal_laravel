@@ -31,22 +31,22 @@ class Controller extends BaseController
         return view('client.clients.contact');
     }
     function masterisecentralpoint(){
-        return view('user.MASTERISECENTERPOINT');
+        return view('client.kygui.MASTERISECENTERPOINT');
     }
     function lumiereboulevard(){
-        return view('user.lumiere-boulevard');
+        return view('client.kygui.lumiere-boulevard');
     }
     function kygui(){
-        return view('user.kygui');
+        return view('client.kygui.kygui');
     }
     function lumimeRiverside(){
-        return view('user.Lumiere-Riverside');
+        return view('client.kygui.Lumiere-Riverside');
     }
     function delasol(){
-        return view('user.delasol');
+        return view('client.kygui.delasol');
     }
     function themarq(){
-        return view('user.themarq');
+        return view('client.kygui.themarq');
     }
     
 }

@@ -6,7 +6,9 @@ use App\Models\ProductModel;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\DB;
-use Illuminate\View\View;
+// use Illuminate\View\View;
+use Illuminate\Support\Facades\View;
+
 
 class ProjectController extends Controller
 {

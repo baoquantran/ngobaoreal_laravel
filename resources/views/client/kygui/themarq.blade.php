@@ -1,4 +1,4 @@
-@extends('kygui-layout')
+@extends('client.kygui.layout.kygui-layout')
 @section('tieudetrang')
 
 @endsection

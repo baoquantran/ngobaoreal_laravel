@@ -14,6 +14,7 @@ class tuvan extends Model
         'name',
         'email',
         'phone',
+        'note',
         'status',
     ];
 }
