@@ -15,10 +15,10 @@ class RoleSeeder extends Seeder
     {
         $data =[
             [
-                'name'=> 'Admin'
+                'name'=> 'Quản trị viên'
             ],
             [
-                'name' => 'Write'
+                'name' => 'Người viết bài'
             ]
             ];
             Role::insert($data);

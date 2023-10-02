@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class TypepostController extends Controller
 {
     /**
@@ -11,7 +11,9 @@ class TypepostController extends Controller
      */
     public function index()
     {
-        return view('admin.manage.typepost.list');
+        $typepost = DB::table('cate_post')->get();
+  
+        return view('admin.manage.typepost.list', compact('typepost'));
     }
 
     /**
@@ -27,7 +29,15 @@ class TypepostController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $name = $request['name'];
+        $hidden = $request['hidden'];
+
+        DB::table('cate_post')
+        ->insert([
+            'name'=> $name,
+            'hidden' =>$hidden
+        ]);
+        return redirect('/dashboard/type-post');
     }
 
     /**
@@ -41,9 +51,15 @@ class TypepostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $request, string $id)
     {
-        return view('admin.manage.typepost.update');
+        $typepost = DB::table('cate_post')->where('id_cp', $id)->first();
+        if ($typepost==null){
+            $request->session()->flash('thongbao','Không có loại này: '. $id);
+            return redirect('/dashboard/type-post');
+        }
+        return view('admin.manage.typepost.update',compact('typepost'));
+       
     }
 
     /**
@@ -51,14 +67,30 @@ class TypepostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $name = $request['name'];
+        $hidden = (int) $request['hidden'];
+        DB::table('cate_post')->where('id_cp', $id)
+        ->update([
+            'name'=>$name,
+            'hidden'=>$hidden
+        ]);
+        return redirect('/dashboard/type-post');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy( Request $request, string $id)
     {
-        //
+        $sosp = DB::table('post')->where('id_post', $id)->count();
+        if ($sosp>0) {
+            $request->session()->flash('thongbao','Không xóa loại tin, vì có bài viết trong loại tin này ');
+            return redirect('/dashboard/type-post');
+        }else {
+            DB::table('cate_post')->where('id_cp', $id)->delete();
+            $request->session()->flash('thongbao', 'Đã xóa loại tin');
+            return redirect('/dashboard/type-post');
+        }
+       
     }
 }

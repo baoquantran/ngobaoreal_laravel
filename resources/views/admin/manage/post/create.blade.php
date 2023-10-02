@@ -21,47 +21,40 @@ Danh sách dự án
 			</div>
 		<div class="table-data">
 				<div class="order">
-					<form class="row">
+					<form class="row" action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
+					@csrf
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Tiêu đề bài viết</label>
-							<input type="text" class="form-control p" id="exampleInputEmail1"
+							<input type="text" name="title" class="form-control p" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
-							<label for="exampleInputPassword1" class="form-label">Loại tin</label>
-							<select class="form-control" name="" id="">
-								<option value="">Đang bán</option>
-								<option value="">Cho thuê</option>
+							<label for="exampleInputPassword1" class="form-label">Loại</label>
+							<select class="form-control" name="typepost" id="">
+								@foreach($typepost as $tp)
+								<option name = "typepost" value="{{$tp->id_cp}}">{{$tp->name}}</option>
+								@endforeach
 							</select>
-                        </div>
+						</div>
 						<div class="mb-3 col-md-12 col-12">
 							<label for="exampleInputEmail1" class="form-label">Chọn ảnh</label>
-							<input type="file" class="form-control p" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new">
 						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-							<label class="form-check-label" for="flexRadioDefault1">
-							  Ẩn
-							</label>
-						  </div>
-						  <div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-							<label class="form-check-label" for="flexRadioDefault2">
-							  Hiện
-							</label>
-						  </div>
 						<div class="mb-3 form-check">
-							<input type="checkbox" class="form-check-input" id="exampleCheck1">
-							<label class="form-check-label" for="exampleCheck1">Nổi bật</label>
+							<input name="hidden" type="radio" value="0" checked> hiện
+							<input name="hidden" type="radio" value="1"> ẩn
+						</div>
+						<div class="mb-3 form-check">
+							<input name="hot" type="radio" value="0"> Nêu nổi bật
+							<input name="hot" type="radio" value="1" checked> Không nêu nổi bật
 						</div>
                         <div class="mb-3 col-md-12 col-12">
 						<h3 class="text-center">Mô tả bài viết</h3>
-						<textarea name="vitriduan" id="" cols="30" rows="10"></textarea>
+						<textarea name="vitri" id="" cols="30" rows="10"></textarea>
 						</div>
 						<div class="mb-3 col-md-12 col-12">
 						<h3 class="text-center">Nội dung bài viết</h3>
-						<textarea name="description" id="" cols="30" rows="10"></textarea>
+						<textarea name="tongquan" id="" cols="30" rows="10"></textarea>
 						</div>
 						<div class="col-md-2 col-12 m-auto">
 							<button type="submit" class="btn btn-primary">Lưu dự án</button>

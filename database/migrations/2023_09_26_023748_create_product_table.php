@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('address',100);
             $table->string('from_price',50)->nullable();
             $table->string('to_price',50);
-            $table->string('tongquan',50)->nullable();
-            $table->string('vitri',50)->nullable();
-            $table->string('matbang',50)->nullable();
-            $table->string('tienich',50)->nullable();
-            $table->string('thanhtoan',50)->nullable();
+            $table->text('tongquan')->nullable();
+            $table->text('vitri')->nullable();
+            $table->text('matbang')->nullable();
+            $table->text('tienich')->nullable();
+            $table->text('thanhtoan')->nullable();
             $table->string('img',300);
             $table->string('slug', 255)->nullable();
             $table->string('content', 500)->nullable();
