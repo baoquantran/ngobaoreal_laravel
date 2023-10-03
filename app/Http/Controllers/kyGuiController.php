@@ -48,17 +48,17 @@ class kyGuiController extends Controller
             $kygui->phone = $request['phone'];
             $kygui->type = $request['options'];
             $kygui->save();
-            return redirect()->route('MASTERISECENTERPOINT');
-            // return response()->json([
-            //     'success' => true,
-            //     'message' => 'Gửi thông tin thành công!'
-            // ]);
+            // return redirect()->route('MASTERISECENTERPOINT');
+            return response()->json([
+                'success' => true,
+                'message' => 'Gửi thông tin thành công!'
+            ]);
         } else {
-            return redirect()->route('MASTERISECENTERPOINT');
-            // return response()->json([
-            //     'success' => false,
-            //     'message' => 'Vui lòng nhập đủ thông tin'
-            // ]);
+            // return redirect()->route('MASTERISECENTERPOINT');
+            return response()->json([
+                'success' => false,
+                'message' => 'Vui lòng nhập đủ thông tin'
+            ]);
         }
     }
 

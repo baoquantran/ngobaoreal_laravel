@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\tuvan;
+use Illuminate\Support\Facades\Session;
 
 class tuVanController extends Controller
 {
@@ -48,6 +49,7 @@ class tuVanController extends Controller
             $tuvan->phone = $request['phone'];
             $tuvan->note = $request['note'];
             $tuvan->save();
+            Session::flash('thongbao', 'Gửi tư vấn hoàn tất');
             return redirect()->route('lien-he');
             // return response()->json([
             //     'success' => true,
