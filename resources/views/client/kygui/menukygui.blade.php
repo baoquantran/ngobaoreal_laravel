@@ -36,7 +36,7 @@
         </nav>
 
         <!-- Hiển thị form nằm ngang dưới thanh điều hướng -->
-        <form class="form-menu row" method="post"
+        <form class="form-menu row" id="kygui" method="post"
         action="{{ route('kygui.store') }}">
         @csrf
             <div class="row col-3">
@@ -64,16 +64,16 @@
                     </div>
                 </div>
                 <div class="col-md-2 mt-2 col-12">
-                    <input type="text" class="form-control" name="name" id="hoTen" placeholder="Họ và Tên">
+                    <input type="text" class="form-control" name="name" id="hoTen" placeholder="Họ và Tên" required>
                 </div>
                 <div class="col-md-2 mt-2 col-12">
-                    <input type="text" class="form-control" name="phone" id="soDienThoai" placeholder="Số Điện Thoại">
+                    <input type="text" class="form-control" name="phone" id="soDienThoai" placeholder="Số Điện Thoại" required>
                 </div>
                 <div class="col-md-2 mt-2 col-12">
-                    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
                 </div>
                 <div class="col-md-1 mt-2 col-12">
-                    <button type="submit" class="btn btn-primary">Gửi</button>
+                    <button type="submit" class="btn btn-primary" id="liveToastBtn">Gửi</button>
                 </div>
             </div>
         </form>

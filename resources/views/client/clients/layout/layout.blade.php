@@ -127,14 +127,16 @@
                                 của quý khách sau 2 phút. Vui lòng kiểm tra chính xác thông tin trước khi gửi!</p>
                             <div class="mb-3">
                                 <input type="text" class="form-control" name="name"
-                                    placeholder="Nhập họ & tên">
+                                    placeholder="Nhập họ & tên" required>
                             </div>
                             <div class="mb-3">
-                                <input type="email" class="form-control" name="email" placeholder="Nhập Email">
+                                <input type="email" class="form-control" name="email" placeholder="Nhập Email"
+                                    pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <input type="text" class="form-control" name="phone"
-                                    placeholder="Nhập Số điện thoại">
+                                    placeholder="Nhập Số điện thoại" required>
                             </div>
                             <div class="mb-3">
                                 <textarea class="form-control" name="note" placeholder="Để lại lời nhắn"></textarea>
@@ -157,7 +159,7 @@
                 </div>
             </div>
         </div>
-        <div style="z-index: 9999;" class="toast-container position-fixed bottom-0 end-0  mx-1 my-5 border-0">
+        <div style="position:fixed; top:15%; right:0;" class="toast-container mx-1 my-5 border-0">
             <div id="liveToast" class="toast text-bg-success" role="alert" aria-live="assertive"
                 aria-atomic="true">
                 <div class="d-flex justify-content-between p-3">
@@ -182,6 +184,7 @@
             $('#liveToast').on('shown.bs.toast', function() {
                 // Đóng tab có id= banggia
                 $('#banggia').modal('hide');
+                $('#tuvan').modal('hide');
 
                 // Xóa hết value trong input
                 $('#myForm input').val('');
@@ -191,6 +194,7 @@
             $('#liveToast').on('hidden.bs.toast', function() {
                 // Đóng tab có id= banggia
                 $('#banggia').modal('hide');
+                $('#tuvan').modal('hide');
 
                 // Xóa hết value trong input
                 $('#myForm input').val('');
@@ -225,6 +229,8 @@
             });
         });
     </script>
+
+
 
     <!-- JavaScript Libraries -->
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
