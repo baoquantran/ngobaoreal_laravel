@@ -184,6 +184,7 @@
             $('#liveToast').on('shown.bs.toast', function() {
                 // Đóng tab có id= banggia
                 $('#banggia').modal('hide');
+                $('#tuvan').modal('hide');
 
                 // Xóa hết value trong input
                 $('#myForm input').val('');
@@ -193,6 +194,7 @@
             $('#liveToast').on('hidden.bs.toast', function() {
                 // Đóng tab có id= banggia
                 $('#banggia').modal('hide');
+                $('#tuvan').modal('hide');
 
                 // Xóa hết value trong input
                 $('#myForm input').val('');
