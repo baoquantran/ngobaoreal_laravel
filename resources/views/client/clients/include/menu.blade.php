@@ -14,11 +14,10 @@
                         <div class="nav-item dropdown">
                             <a href="/bai-viet" id="project-link" class="nav-link dropdown-toggle">Bài viết</a>
                             <div class="dropdown-menu rounded-0 m-0" style="background-color: #E4A852; border: none;">
-                                <a href="/bai-viet#bvphobien" class="dropdown-item">Phổ biến nhất</a>
-                                <a href="/bai-viet#bvtintuc" class="dropdown-item" id="tintuc">Tin tức</a>
-                                <a href="/bai-viet#bvkinhnghiemdautu" class="dropdown-item" id="kinhnghiemdautu">Kinh nghiệm đầu tư</a>
-                                <a href="/bai-viet#bvchuyendautu" class="dropdown-item" id="chuyendautu">Chuyện đầu tư</a>
-                                <a href="/bai-viet#bvfile" class="dropdown-item" id="bvfile">File báo cáo thị trường</a>
+                                <a href="/bai-viet#bvphobien" class="dropdown-item">Bài viết phổ biến</a>
+                            @foreach($catepost as $cp)
+                                <a href="/detail/{{$cp->id_cp}}" class="dropdown-item">{{$cp->name}}</a>
+                            @endforeach
                             </div>
                         </div>
                         <div class="nav-item dropdown">

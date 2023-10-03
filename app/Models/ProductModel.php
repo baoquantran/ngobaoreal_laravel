@@ -28,5 +28,6 @@ class ProductModel extends Model
         'tienich',
         'matbang',
         'thanhtoan',
+        'progress'
     ];
 }

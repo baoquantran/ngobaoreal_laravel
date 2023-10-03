@@ -34,6 +34,22 @@ Danh sách dự án
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
+							<label for="exampleInputPassword1" class="form-label">Chọn tỉnh</label>
+							<select class="form-control" name="id_local" id="provinceSelect">
+								@foreach($city as $c)
+								<option name ="id_local" value="{{$c->id_local}}">{{$c->name}}</option>
+								@endforeach
+							</select>
+						</div>
+						<div class="mb-3 col-md-6 col-12">
+							<label for="exampleInputPassword1" class="form-label">Chọn Quận</label>
+							<select class="form-control" name="id_local" id="parentIDSelect">
+								@foreach($district as $d)
+								<option name ="id_local" value="{{$d->id_local}}">{{$d->name}}</option>
+								@endforeach
+							</select>
+						</div>
+						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Nhập giá từ</label>
 							<input type="number" class="form-control p" name="from_price" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
@@ -57,6 +73,14 @@ Danh sách dự án
 								@foreach($room as $r)
 								<option name = "id_room" value="{{$r->id_room}}">{{$r->name}}</option>
 								@endforeach
+							</select>
+						</div>
+						<div class="mb-3 col-md-6 col-12">
+							<label for="exampleInputPassword1" class="form-label">Tiến độ dự án</label>
+							<select class="form-control" name="progress" id="">
+								
+								<option name="progress" value="0">Đang triễn khai</option>
+								<option name="progress" value="1">Đã hoàn thành</option>
 							</select>
 						</div>
 						<div class="mb-3 col-md-12 col-12">
@@ -101,4 +125,6 @@ Danh sách dự án
 			</div>
 		</main>
 		<!-- MAIN -->
+
+		
 @endsection

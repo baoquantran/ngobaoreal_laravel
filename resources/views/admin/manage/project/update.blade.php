@@ -63,6 +63,14 @@ Cập nhật dự án
 								@endforeach
 							</select>
 						</div>
+						<div class="mb-3 col-md-6 col-12">
+							<label for="exampleInputPassword1" class="form-label">Tiến độ dự án</label>
+							<select class="form-control" name="progress" id="">
+								
+								<option name="progress" value="0">Đang triễn khai</option>
+								<option name="progress" value="1">Đã hoàn thành</option>
+							</select>
+						</div>
 						<div class="mb-3 col-md-12 col-12">
 							<label for="exampleInputEmail1" class="form-label">Chọn ảnh</label>
 							<input type="file"  class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new" value="{{$product->img}}" name="img__new">

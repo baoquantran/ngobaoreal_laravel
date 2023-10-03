@@ -27,6 +27,10 @@ Sửa tài khoản người dùng
 				<div class="order">
 				<form class="row" method="post" action="{{route('user.update', $user->id_user)}}" enctype="multipart/form-data">
 					@csrf @method('PUT')
+						<div class="mb-3 col-md-12 col-12">
+							<label for="exampleInputEmail1" class="form-label">Chọn ảnh</label>
+							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new">
+						</div>
 						<div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Họ và tên</label>
 							<input type="text" class="form-control p" name="name" value="{{$user->name}}" id="exampleInputEmail1"

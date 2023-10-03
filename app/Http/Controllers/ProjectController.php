@@ -6,7 +6,7 @@ use App\Models\ProductModel;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\DB;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\View;
 
 class ProjectController extends Controller
 {
@@ -21,7 +21,19 @@ class ProjectController extends Controller
 
         $room = DB::table('room')
             ->get();
-        View::share(compact('room', 'status'));
+
+            
+        $district = DB::table('local')
+        ->get();
+
+
+        $city = DB::table('local')
+        ->where('parent_id','=','0')
+        ->get();
+
+
+        View::share(compact('room', 'status','district','city'));
+
     }
 
     public function index()
@@ -29,7 +41,7 @@ class ProjectController extends Controller
         $project = DB::table('product')
             ->join('room', 'product.id_room', '=', 'room.id_room')
             ->join('status', 'product.id_status', '=', 'status.id_status')
-            ->select('product.id_pro', 'product.img', 'product.name', 'product.address', 'room.name AS name_room', 'name_status', 'product.kygui')
+            ->select('product.id_pro','product.progress', 'product.img', 'product.name', 'product.address', 'room.name AS name_room', 'name_status', 'product.kygui')
             ->get();
         return view('admin.manage.project.list', compact('project'));
     }
@@ -62,6 +74,8 @@ class ProjectController extends Controller
         $pro->matbang = $request['matbang'];
         $pro->thanhtoan = $request['thanhtoan'];
         $pro->kygui = $request['kygui'];
+        $pro->progress = $request['progress'];
+        $pro->id_local = $request['id_local'];
 
         if ($request->hasFile('img__new')) {
             $file = $request->file('img__new');
@@ -118,6 +132,7 @@ class ProjectController extends Controller
         $pro->matbang = $request['matbang'];
         $pro->thanhtoan = $request['thanhtoan'];
         $pro->kygui = $request['kygui'];
+        $pro->progress = $request['progress'];
 
         if ($request->hasFile('img__new')) {
             $file = $request->file('img__new');

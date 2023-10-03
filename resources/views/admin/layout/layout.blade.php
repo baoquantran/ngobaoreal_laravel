@@ -16,8 +16,7 @@
     <title>@yield('tieudetrang')</title>
 </head>
 
-<body style="background: #eee">
-
+<body>
 
     <!-- SIDEBAR -->
     <section id="sidebar">
@@ -33,8 +32,8 @@
                     <span class="text">Bảng điều khiển</span>
                 </a>
             </li>
-            <li class="">
-                <a class="nav-link" href="#">
+            <li class="{{ Route::currentRouteName() === 'room.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('room.index') }}">
                     <i class='bx bxs-doughnut-chart'></i>
                     <span class="text">Quản lý danh mục dự án</span>
                 </a>
@@ -64,8 +63,8 @@
                 </a>
             </li>
 
-            <li>
-                <a class="nav-link" href="#">
+            <li class="{{ Route::currentRouteName() === 'user.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('user.index') }}">
                     <i class='bx bxs-group'></i>
                     <span class="text">Quản lý tài khoản</span>
                 </a>
@@ -159,7 +158,7 @@
    </a> -->
             <a class="nav-link" href="">{{ Auth::user()->name }}</a>
             <div class="profile">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                <img src="{{ Auth::user()->img }}"
                     alt="">
                 <ul class="profile-link">
                     <li><a class="nav-link" href="#"><i class='bx bxs-user-circle icon'></i> Hồ sơ</a></li>
@@ -175,6 +174,7 @@
 
     </section>
     <!-- CONTENT -->
+
 </body>
 <script src="https://cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
 @include('ckfinder::setup')

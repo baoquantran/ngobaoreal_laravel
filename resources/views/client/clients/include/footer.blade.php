@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Liên hệ</h5>
-                        <div class="d-flex pt-2">
+                        <div class="d-flex pt-2 mb-1">
                             <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@ngobaorealty"><i class="fa-brands fa-tiktok"></i></a>
                             <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/ngobaoreal"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ngobaoreal/"><i class="fa-brands fa-instagram"></i></a>

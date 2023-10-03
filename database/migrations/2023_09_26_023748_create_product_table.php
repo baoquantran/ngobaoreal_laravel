@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('img',300);
             $table->string('slug', 255)->nullable();
             $table->string('content', 500)->nullable();
+            $table->boolean('progress')->default(1);
             $table->boolean('hide')->default(1);
             $table->timestamps();
         });

@@ -42,6 +42,7 @@ Danh sách dự án
 								<th>Tên</th>
 								<th>Địa chỉ</th>
 								<th>Loại</th>
+								<th>Tiến độ dự án</th>
 								<th>Ký gửi</th>
 								<th>Trạng thái</th>
 								<th>Cài đặt</th>
@@ -55,6 +56,13 @@ Danh sách dự án
 								<td>{{$pr->name}}</td>
 								<td>{{$pr->address}}</td>
 								<td>{{$pr->name_room}}</td>
+								<td>
+									@if($pr->progress == 0)
+										Đang trễn khai
+									@else
+										Đã hoàn thành
+									@endif
+								</td>
 								<td>
 									@if($pr->kygui == 0)
 										Không nhận ký gửi
