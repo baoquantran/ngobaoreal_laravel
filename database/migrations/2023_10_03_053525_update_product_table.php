@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('product', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_local');
-            $table->foreign('id_local')->references('id_local')->on('local');
+            $table->unsignedBigInteger('id_local1');
+            $table->foreign('id_local1')->references('id_local')->on('local');
+            $table->unsignedBigInteger('id_local2');
+            $table->foreign('id_local2')->references('id_local')->on('local');
         });
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\PostModel;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Session;
 
 
@@ -53,6 +54,10 @@ class PostController extends Controller
         $new->hidden = (int) $request['hidden'];
         $new->content = $request['tongquan'];
         $new->id_cp = (int) $request['typepost'];
+        $new->hot = (int) $request['hot'];
+        $new->poster =  $request['poster'];
+        $new->slug =  Str::slug($request['slug']);
+
 
         if ($request->hasFile('img__new')) {
             $file = $request->file('img__new');
@@ -104,6 +109,8 @@ class PostController extends Controller
         $new->content = $request['tongquan'];
         $new->id_cp = (int) $request['typepost'];
         $new->hot = (int) $request['hot'];
+        $new->poster =  $request['poster'];
+        $new->slug =  Str::slug($request['slug']);
 
         if ($request->hasFile('img__new')) {
             $file = $request->file('img__new');
@@ -123,12 +130,12 @@ class PostController extends Controller
      */
     public function destroy( Request $request, string $id)
     {
-        $sosp = \DB::table('post')->where('id_post', $id)->count();
+        $sosp = DB::table('post')->where('id_post', $id)->count();
         if ($sosp==0) {
             $request->session()->flash('thongbao','Tin không tồn tại');
             return redirect('/dashboard/post');
         }
-        \DB::table('post')->where('id_post', $id)->delete();
+        DB::table('post')->where('id_post', $id)->delete();
         $request->session()->flash('thongbao', 'Đã xóa sản phẩm');
         return redirect('/dashboard/post');
     }

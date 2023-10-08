@@ -14,9 +14,9 @@
                         <div class="nav-item dropdown">
                             <a href="/bai-viet" id="project-link" class="nav-link dropdown-toggle">Bài viết</a>
                             <div class="dropdown-menu rounded-0 m-0" style="background-color: #E4A852; border: none;">
-                                <a href="/bai-viet#bvphobien" class="dropdown-item">Bài viết phổ biến</a>
+                                
                             @foreach($catepost as $cp)
-                                <a href="/detail/{{$cp->id_cp}}" class="dropdown-item">{{$cp->name}}</a>
+                                <a href="{{route('post',['cate_post'=>$cp->catep_slug])}}" class="dropdown-item">{{$cp->name}}</a>
                             @endforeach
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                         <a href="/tuyen-dung" class="nav-item nav-link">Tuyển dụng</a>
                         <a href="/lien-he" class="nav-item nav-link">Liên hệ</a>
                     </div>
-                    <a href="" class="btn btn-primary px-3 d-none d-lg-flex"><i class="fa-regular fa-user"></i></a>
+                    <a href="/login" class="btn btn-primary px-3 d-none d-lg-flex"><i class="fa-regular fa-user"></i></a>
                 </div>
             </nav>
         </div>

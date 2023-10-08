@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\ProductModel;
 use Illuminate\Http\Request;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
+
 
 
 class ProjectController extends Controller
@@ -25,6 +26,7 @@ class ProjectController extends Controller
 
             
         $district = DB::table('local')
+        ->where('parent_id','!=','0')
         ->get();
 
 
@@ -76,7 +78,8 @@ class ProjectController extends Controller
         $pro->thanhtoan = $request['thanhtoan'];
         $pro->kygui = $request['kygui'];
         $pro->progress = $request['progress'];
-        $pro->id_local = $request['id_local'];
+        $pro->id_local1 = $request['id_local1'];
+        $pro->id_local2 = $request['id_local2'];
 
         if ($request->hasFile('img__new')) {
             $file = $request->file('img__new');
@@ -87,7 +90,7 @@ class ProjectController extends Controller
         }
 
         $pro->save();
-
+        
         return redirect(route('project.index'))->with('status', 'Thêm sản phẩm thành công');
     }
 
@@ -154,12 +157,12 @@ class ProjectController extends Controller
     public function destroy(Request $request, string $id)
     {
 
-        $sosp = \DB::table('product')->where('id_pro', $id)->count();
+        $sosp = DB::table('product')->where('id_pro', $id)->count();
         if ($sosp==0) {
             $request->session()->flash('thongbao','Sản phẩm không tồn tại');
             return redirect('/dashboard/project');
         }
-        \DB::table('product')->where('id_pro', $id)->delete();
+        DB::table('product')->where('id_pro', $id)->delete();
         $request->session()->flash('thongbao', 'Đã xóa sản phẩm');
         return redirect('/dashboard/project');
         }

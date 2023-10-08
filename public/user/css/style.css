@@ -225,6 +225,13 @@
 .about-img img {
     position: relative;
     z-index: 2;
+    height: 400px;
+}
+@media screen and (max-width: 768px) {
+    .about-img img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 .about-img::before {
@@ -277,6 +284,8 @@
 
 .property-item img {
     transition: .5s;
+    width: 100%;
+    height: 270px;
 }
 
 .property-item:hover img {
@@ -1160,8 +1169,8 @@ img {
     position: relative;
 }
 .anhbaiviet img{
-    max-width: 100%;
-    height: 100%;
+    width: 100%;
+    height: 200px;
 }
 .anhbaiviet span {
     position: absolute; 
@@ -1340,7 +1349,6 @@ font-family: 'Montserrat', sans-serif;
 .banggia-container{
     z-index: 99999;
 }
-
 
 
 

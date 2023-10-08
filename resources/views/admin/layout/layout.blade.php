@@ -32,6 +32,7 @@
                     <span class="text">Bảng điều khiển</span>
                 </a>
             </li>
+            @if (auth()->check() && auth()->user()->role_id == 1)
             <li class="{{ Route::currentRouteName() === 'room.index' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('room.index') }}">
                     <i class='bx bxs-doughnut-chart'></i>
@@ -50,6 +51,7 @@
                     <span class="text">Quản lý trạng thái dự án</span>
                 </a>
             </li>
+            @endif
             <li class="{{ Route::currentRouteName() === 'type-post.index' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('type-post.index') }}">
                     <i class='bx bxs-book'></i>
@@ -62,7 +64,7 @@
                     <span class="text">Quản lý bài viết</span>
                 </a>
             </li>
-
+            @if (auth()->check() && auth()->user()->role_id == 1)
             <li class="{{ Route::currentRouteName() === 'user.index' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('user.index') }}">
                     <i class='bx bxs-group'></i>
@@ -88,7 +90,7 @@
                     {{-- <span class="badge rounded-pill text-bg-danger mx-5">9</span> --}}
                 </a>
             </li>
-
+            @endif
 
             {{-- <li >
 				<a class="nav-link" href="#">

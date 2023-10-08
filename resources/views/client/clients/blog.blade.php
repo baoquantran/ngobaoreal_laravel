@@ -26,74 +26,17 @@
         <h1 class="mb-3">Bài viết nổi bật</h1>
         <p>Chúng tôi có một đội ngủ quản lý nhiệt tình và kỹ năng, luôn sẵn sàng hỗ trợ và quản lý tốt mọi vấn đề.</p>
     </div>
-    <div class="container-xxl py-5">
-        <div class="container hot">
-            <div class="row g-5 align-items-center d-flex">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="/user/img/about.jpg">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="mb-4">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM</h1>
-                    <p class="mb-4">The MarQ District 1 là một dự án căn hộ chất lượng tại trung tâm Quận 1, thành phố
-                        Hồ Chí Minh. Với vị trí đắc địa và tiện ích hiện đại, nơi đây hứa hẹn mang đến trải nghiệm sống
-                        hoàn hảo cho cư dân và du khách. Tôi đã có cơ hội trải nghiệm một ngày tại đây và dưới đây là
-                        chia sẻ của tôi.</p>
-
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Đọc thêm</a>
-                </div>
-            </div>
-            <div class="row g-5 align-items-center d-flex">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="/user/img/about.jpg">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="mb-4">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM</h1>
-                    <p class="mb-4">The MarQ District 1 là một dự án căn hộ chất lượng tại trung tâm Quận 1, thành phố
-                        Hồ Chí Minh. Với vị trí đắc địa và tiện ích hiện đại, nơi đây hứa hẹn mang đến trải nghiệm sống
-                        hoàn hảo cho cư dân và du khách. Tôi đã có cơ hội trải nghiệm một ngày tại đây và dưới đây là
-                        chia sẻ của tôi.</p>
-
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Đọc thêm</a>
-                </div>
-            </div>
-            <div class="row g-5 align-items-center d-flex">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="/user/img/about.jpg">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="mb-4">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM</h1>
-                    <p class="mb-4">The MarQ District 1 là một dự án căn hộ chất lượng tại trung tâm Quận 1, thành phố
-                        Hồ Chí Minh. Với vị trí đắc địa và tiện ích hiện đại, nơi đây hứa hẹn mang đến trải nghiệm sống
-                        hoàn hảo cho cư dân và du khách. Tôi đã có cơ hội trải nghiệm một ngày tại đây và dưới đây là
-                        chia sẻ của tôi.</p>
-
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Đọc thêm</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('client.clients.include.noibat')
     <!-- dongbaivietnoibat -->
     <!-- bai viet -->
     <div class="container-fluid mb-5 p-4 justify-content-center wow fadeIn mt-5 row ps-5" data-wow-delay="0.1s"style="padding: 35px;">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h1 class="mb-3">TIN TỨC</h1>
+            <h1 class="mb-3">{{$postmain[0]->name}}</h1>
         </div>
         <div class="news container">
             <!-- baivietphobien -->
             <div class="danhmucbaiviet row" id="bvphobien">
-                <div class="row g-0 gx-5 align-items-end mt-5">
-                    <div class="col-lg-6">
-                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                            <h3 class="mb-3 text-light">Tin phổ biến</h3>
-                        </div>
-                    </div>
-                </div>
+               
                 <div class="container col-md-3 order-md-2 fixed-category">
                     <div class="danhmucbaiviets">
                         <h2 class="text-center mt-3">Liên hệ với Bảo</h2>
@@ -107,94 +50,41 @@
                         <h2 class="text-center mt-3">Danh mục bài viết</h2>
                         <hr>
                         <ul>
-                            <li><a href="blog.html#bvphobien" id="phobien">Bài viết phổ biến nhất</a></li>
+                            @foreach($catepost as $cp)
+                            <li><a href="{{route('post',['cate_post'=>$cp->catep_slug])}}" id="phobien">{{$cp->name}}</a></li>
                             <hr>
-                            <li><a href="#bvtintuc" id="tintuc">Bài viết về tin tức</a></li>
-                            <hr>
-                            <li><a href="#bvkinhnghiemdautu" id="kinhnghiemdautu">Bài viết về kinh nghiệm đầu tư</a></li>
-                            <hr>
-                            <li><a href="#bvchuyendautu" id="chuyendautu">Bài viết về chuyện đầu tư</a></li>
-                            <hr>
-                            <li><a href="#bvfile" id="file">File báo cáo thị trường</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
+                <div class="row g-0 gx-5 align-items-end mt-5">
+                    <div class="col-lg-6">
+                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
+                            <h3 class="mb-3 text-light">Tin phổ biến</h3>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-8 order-md-1">
+                    @foreach($postpb as $ppb)
                     <!-- Bài viết 1 -->
                     <div class="baiviet-don row">
                         <div class="anhbaiviet col-md-4">
                             <!-- Cột bên trái chứa ảnh -->
-                            <img src="https://media.vneconomy.vn/w800/images/upload/2022/11/16/56c99f14-2861-4dc2-ae06-3c04c8b22a63.jpg"
-                                alt="Ảnh bài viết 1" class="img-fluid">
-                            <span class="badge badge-primary">Tin tức</span>
+                            <img src="/{{$ppb->img}}"
+                                alt="{{$ppb->title}}" class="img-fluid">
+                            <span class="badge badge-primary">{{$ppb->name}}</span>
                         </div>
 
                         <div class="col-md-8">
                             <!-- Cột bên phải chứa tiêu đề, ngày đăng và nội dung bài viết -->
-                            <h4><a class="text-dark" href="blog-single.html">Tiêu đề bài viết 1</a></h4>
-                            <p>Ngày đăng: 16 tháng 09, 2023</p>
-                            <p>Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                                Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
+                            <h4><a class="text-dark mt-3" href="{{ route('post_detail', ['cate_post' => $ppb->catep_slug,'post_slug' => $ppb->slug]) }}">{{$ppb->title}}</a></h4>
+                            <p>Ngày đăng: {{$ppb->ngaydang}}</p>
+                            <p>{!! $ppb->subtitle !!}
                             </p>
-                            <a href="blog-single.html" class="btn btn-primary"> Đọc thêm</a>
+                            <a href="{{ route('post_detail', ['cate_post' => $ppb->catep_slug,'post_slug' => $ppb->slug]) }}" class="btn btn-primary"> Đọc thêm</a>
                         </div>
                     </div>
-
-                    <!-- Bài viết 1 -->
-                    <div class="baiviet-don row">
-                        <div class="anhbaiviet col-md-4">
-                            <!-- Cột bên trái chứa ảnh -->
-                            <img src="https://thanhtra.com.vn/data/images/0/2021/12/21/nghiemlan/lam-phat-bat-dong-san.jpg"
-                                alt="Ảnh bài viết 1" class="img-fluid">
-                            <span class="badge badge-primary">Kinh nghiệm đầu tư</span>
-                        </div>
-                        <div class="col-md-8">
-                            <!-- Cột bên phải chứa tiêu đề, ngày đăng và nội dung bài viết -->
-                            <h4><a class="text-dark" href="blog-single.html">Tiêu đề bài viết 1</a></h4>
-                            <p>Ngày đăng: 16 tháng 09, 2023</p>
-                            <p>Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                                Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                            </p>
-                            <a href="blog-single.html" class="btn btn-primary"> Đọc thêm</a>
-                        </div>
-                    </div>
-                    <!-- Bài viết 1 -->
-                    <div class="baiviet-don row">
-                        <div class="anhbaiviet col-md-4">
-                            <!-- Cột bên trái chứa ảnh -->
-                            <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/10/18/846390/Dau-Tu-Bat-Dong-San.jpg"
-                                alt="Ảnh bài viết 1" class="img-fluid">
-                            <span class="badge badge-primary">Chuyện đầu tư</span>
-
-                        </div>
-                        <div class="col-md-8">
-                            <!-- Cột bên phải chứa tiêu đề, ngày đăng và nội dung bài viết -->
-                            <h4><a class="text-dark" href="blog-single.html">Tiêu đề bài viết 1</a></h4>
-                            <p>Ngày đăng: 16 tháng 09, 2023</p>
-                            <p>Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                                Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                            </p>
-                            <a href="blog-single.html" class="btn btn-primary"> Đọc thêm</a>
-                        </div>
-                    </div>
-                    <!-- Bài viết 1 -->
-                    <div class="baiviet-don row">
-                        <div class="anhbaiviet col-md-4">
-                            <!-- Cột bên trái chứa ảnh -->
-                            <img src="https://xdcs.cdnchinhphu.vn/446259493575335936/2023/2/24/chinh-sach-moi-anh-huong-den-thi-truong-bat-dong-san1602162451-16772104701281575851658.png"
-                                alt="Ảnh bài viết 1" class="img-fluid">
-                            <span class="badge badge-primary">Flie báo cáo thị trường</span>
-                        </div>
-                        <div class="col-md-8">
-                            <!-- Cột bên phải chứa tiêu đề, ngày đăng và nội dung bài viết -->
-                            <h4><a class="text-dark" href="blog-single.html">Tiêu đề bài viết 1</a></h4>
-                            <p>Ngày đăng: 16 tháng 09, 2023</p>
-                            <p>Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                                Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                            </p>
-                            <a href="blog-single.html" class="btn btn-primary"> Đọc thêm</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <!-- -----------------------tintuc--------------------------- -->
@@ -207,171 +97,32 @@
                     </div>
                 </div>
                 <div class="col-md-8 ">
+                    @foreach($postmain as $pm)
                     <!-- Bài viết 1 -->
                     <div class="baiviet-don row">
                         <div class="anhbaiviet col-md-4">
                             <!-- Cột bên trái chứa ảnh -->
-                            <img src="https://media.vneconomy.vn/w800/images/upload/2022/11/16/56c99f14-2861-4dc2-ae06-3c04c8b22a63.jpg"
-                                alt="Ảnh bài viết 1" class="img-fluid">
+                            <img src="/{{$pm->img}}"
+                                alt="{{$pm->title}}" class="img-fluid">
                             <span class="badge badge-primary">Tin tức</span>
                         </div>
 
                         <div class="col-md-8">
                             <!-- Cột bên phải chứa tiêu đề, ngày đăng và nội dung bài viết -->
-                            <h4><a class="text-dark" href="blog-single.html">Tiêu đề bài viết 1</a></h4>
-                            <p>Ngày đăng: 16 tháng 09, 2023</p>
-                            <p>Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                                Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
+                            <h4><a class="text-dark" href="{{ route('post_detail', ['cate_post' => $pm->catep_slug,'post_slug' => $pm->slug]) }}">{{$pm->name}}</a></h4>
+                            <p>Ngày đăng: {{$pm->ngaydang}}</p>
+                            <p>{!!$pm->subtitle!!}
                             </p>
-                            <a href="blog-single.html" class="btn btn-primary"> Đọc thêm</a>
+                            <a href="{{ route('post_detail', ['cate_post' => $pm->catep_slug,'post_slug' => $pm->slug]) }}" class="btn btn-primary"> Đọc thêm</a>
                         </div>
                     </div>
-
-                    <!-- Bài viết 1 -->
-                    <div class="baiviet-don row">
-                        <div class="anhbaiviet col-md-4">
-                            <!-- Cột bên trái chứa ảnh -->
-                            <img src="https://thanhtra.com.vn/data/images/0/2021/12/21/nghiemlan/lam-phat-bat-dong-san.jpg"
-                                alt="Ảnh bài viết 1" class="img-fluid">
-                            <span class="badge badge-primary">Kinh nghiệm đầu tư</span>
-                        </div>
-                        <div class="col-md-8">
-                            <!-- Cột bên phải chứa tiêu đề, ngày đăng và nội dung bài viết -->
-                            <h4><a class="text-dark" href="blog-single.html">Tiêu đề bài viết 1</a></h4>
-                            <p>Ngày đăng: 16 tháng 09, 2023</p>
-                            <p>Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                                Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                            </p>
-                            <a href="blog-single.html" class="btn btn-primary"> Đọc thêm</a>
-                        </div>
-                    </div>
-                    <!-- Bài viết 1 -->
-                    <div class="baiviet-don row">
-                        <div class="anhbaiviet col-md-4">
-                            <!-- Cột bên trái chứa ảnh -->
-                            <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/10/18/846390/Dau-Tu-Bat-Dong-San.jpg"
-                                alt="Ảnh bài viết 1" class="img-fluid">
-                            <span class="badge badge-primary">Chuyện đầu tư</span>
-
-                        </div>
-                        <div class="col-md-8">
-                            <!-- Cột bên phải chứa tiêu đề, ngày đăng và nội dung bài viết -->
-                            <h4><a class="text-dark" href="blog-single.html">Tiêu đề bài viết 1</a></h4>
-                            <p>Ngày đăng: 16 tháng 09, 2023</p>
-                            <p>Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                                Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                            </p>
-                            <a href="blog-single.html" class="btn btn-primary"> Đọc thêm</a>
-                        </div>
-                    </div>
-                    <!-- Bài viết 1 -->
-                    <div class="baiviet-don row">
-                        <div class="anhbaiviet col-md-4">
-                            <!-- Cột bên trái chứa ảnh -->
-                            <img src="https://xdcs.cdnchinhphu.vn/446259493575335936/2023/2/24/chinh-sach-moi-anh-huong-den-thi-truong-bat-dong-san1602162451-16772104701281575851658.png"
-                                alt="Ảnh bài viết 1" class="img-fluid">
-                            <span class="badge badge-primary">Flie báo cáo thị trường</span>
-                        </div>
-                        <div class="col-md-8">
-                            <!-- Cột bên phải chứa tiêu đề, ngày đăng và nội dung bài viết -->
-                            <h4><a class="text-dark" href="blog-single.html">Tiêu đề bài viết 1</a></h4>
-                            <p>Ngày đăng: 16 tháng 09, 2023</p>
-                            <p>Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                                Nội dung bài viết 1 sẽ được hiển thị ở đây. Nội dung bài viết 1 sẽ được hiển thị ở đây.
-                            </p>
-                            <a href="blog-single.html" class="btn btn-primary"> Đọc thêm</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
     <!-- end bai viet -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="mb-3">Các bài viết nổi bật</h1>
-                <p>Các bài viết chất lượng, độc đáo và đầy cảm hứng.</p>
-            </div>
-            <div class="bai-viet-lq">
-                <div class="bai-viet-lq-list">
-                    <div class="post-single me-3 mt-5 mb-5 ms-3">
-                        <div class="post card">
-                            <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
-                            <div class="card-body d-grid justify-content-center">
-                                <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
-                                </h5>
-                                <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
-                            </div>
-                            <div class="card-footer text-muted">
-                                Ngày đăng: 14/09/2023
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bai-viet-lq-list">
-                    <div class="post-single me-3 mt-5 mb-5 ms-3">
-                        <div class="post card">
-                            <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
-                            <div class="card-body d-grid justify-content-center">
-                                <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
-                                </h5>
-                                <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
-                            </div>
-                            <div class="card-footer text-muted">
-                                Ngày đăng: 14/09/2023
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bai-viet-lq-list">
-                    <div class="post-single me-3 mt-5 mb-5 ms-3">
-                        <div class="post card">
-                            <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
-                            <div class="card-body d-grid justify-content-center">
-                                <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
-                                </h5>
-                                <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
-                            </div>
-                            <div class="card-footer text-muted">
-                                Ngày đăng: 14/09/2023
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bai-viet-lq-list">
-                    <div class="post-single me-3 mt-5 mb-5 ms-3">
-                        <div class="post card">
-                            <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
-                            <div class="card-body d-grid justify-content-center">
-                                <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
-                                </h5>
-                                <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
-                            </div>
-                            <div class="card-footer text-muted">
-                                Ngày đăng: 14/09/2023
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bai-viet-lq-list">
-                    <div class="post-single me-3 mt-5 mb-5 ms-3">
-                        <div class="post card">
-                            <img src="https://channel.mediacdn.vn/2020/11/28/photo-1-1606529143640136190400.jpg" class="card-img-top" alt="Ảnh bài viết 1">
-                            <div class="card-body d-grid justify-content-center">
-                                <h5 class="card-title text-light pb-5"><a href="blog-single.html">Trải nghiệm một ngày tại The MarQ District 1 tại trung tâm TP.HCM </a>
-                                </h5>
-                                <a class="d-flex justify-content-end" href="blog-single.html">Đọc thêm</a>
-                            </div>
-                            <div class="card-footer text-muted">
-                                Ngày đăng: 14/09/2023
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('client.clients.include.posthot')
     <!-- brands -->
     <div class="container-xxl py-5">
         <div class="container border-light">

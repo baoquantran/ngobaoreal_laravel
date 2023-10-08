@@ -281,20 +281,20 @@ $('#linklienhe').click(function() {
 });
 
 //////////////danh muc scroll
-const fixedCategory = document.querySelector('.fixed-category');
+// const fixedCategory = document.querySelector('.fixed-category');
 
-function handleScroll() {
-    if (window.innerWidth >= 980) { // Chỉ thực hiện khi màn hình rộng hơn hoặc bằng 768px
-        if (window.scrollY >= 2000 && window.scrollY < 3500) {
-            fixedCategory.classList.add('fixed');
-        } else {
-            fixedCategory.classList.remove('fixed');
-        }
-    }
-}
+// function handleScroll() {
+//     if (window.innerWidth >= 980) { // Chỉ thực hiện khi màn hình rộng hơn hoặc bằng 768px
+//         if (window.scrollY >= 2000 && window.scrollY < 3500) {
+//             fixedCategory.classList.add('fixed');
+//         } else {
+//             fixedCategory.classList.remove('fixed');
+//         }
+//     }
+// }
 
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('resize', handleScroll); // Xử lý lại khi kích thước màn hình thay đổi
+// window.addEventListener('scroll', handleScroll);
+// window.addEventListener('resize', handleScroll); // Xử lý lại khi kích thước màn hình thay đổi
 
 // -----------------------------ky gui----------------------------
 const formMenu = document.querySelector('.form-menu');

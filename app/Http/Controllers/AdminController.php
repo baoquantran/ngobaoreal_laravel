@@ -15,8 +15,6 @@ class AdminController extends Controller
         // $test = Str::slug($name);
         // abort_if(Gate::denies('user_access'),403,'Bạn không có quyền truy cập');
         return view('admin.dashboard');
-
-        
     }
 
 }

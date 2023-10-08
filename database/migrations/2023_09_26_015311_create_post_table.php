@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title',50);
             $table->text('subtitle',300)->nullable();
             $table->string('img',300)->nullable();
+            $table->string('poster',300)->nullable();
             $table->boolean('hidden')->default(1);
             $table->text('content');
             $table->timestamps();

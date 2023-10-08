@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('cate_post', function (Blueprint $table) {
             $table->id('id_cp');
+            $table->string('catep_slug',100);
             $table->string('name',50);
             $table->boolean('hidden')->default(1);
             $table->timestamps();

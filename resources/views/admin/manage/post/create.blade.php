@@ -23,9 +23,11 @@ Danh sách dự án
 				<div class="order">
 					<form class="row" action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
 					@csrf
+					<input hidden name="poster" value="{{ Auth::user()->name }}" type="text">
+					<input hidden name="slug" id="input2" type="text">
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Tiêu đề bài viết</label>
-							<input type="text" name="title" class="form-control p" id="exampleInputEmail1"
+							<input type="text" name="title" class="form-control p" id="input1"
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
@@ -41,8 +43,8 @@ Danh sách dự án
 							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new">
 						</div>
 						<div class="mb-3 form-check">
-							<input name="hidden" type="radio" value="0" checked> hiện
-							<input name="hidden" type="radio" value="1"> ẩn
+							<input name="hidden" type="radio" value="0" checked> Ẩn
+							<input name="hidden" type="radio" value="1"> Hiện
 						</div>
 						<div class="mb-3 form-check">
 							<input name="hot" type="radio" value="0"> Nêu nổi bật
@@ -65,4 +67,15 @@ Danh sách dự án
 			</div>
 		</main>
 		<!-- MAIN -->
+		<script>
+			// Lấy tham chiếu đến hai input
+			var input1 = document.getElementById('input1');
+			var input2 = document.getElementById('input2');
+
+			// Thêm sự kiện 'input' cho input1
+			input1.addEventListener('input', function () {
+				// Sao chép giá trị của input1 vào input2
+				input2.value = input1.value;
+			});
+		</script>
 @endsection

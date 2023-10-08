@@ -27,9 +27,11 @@ Danh sách dự án
 				<div class="order">
 					<form class="row" method="post" action="{{route('post.update', $post->id_post)}}" enctype="multipart/form-data">
 						@csrf @method('PUT')
+						<input hidden name="poster" value="{{ Auth::user()->name }}" type="text">
+						<input hidden name="slug" id="input2" value="{{$post->slug}}" type="text">
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Tiêu đề bài viết</label>
-							<input type="text" class="form-control p" name="title" value="{{$post->title}}" id="exampleInputEmail1"
+							<input type="text" class="form-control p" name="title" value="{{$post->title}}" id="input1"
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
@@ -69,4 +71,15 @@ Danh sách dự án
 			</div>
 		</main>
 		<!-- MAIN -->
+		<script>
+			// Lấy tham chiếu đến hai input
+			var input1 = document.getElementById('input1');
+			var input2 = document.getElementById('input2');
+
+			// Thêm sự kiện 'input' cho input1
+			input1.addEventListener('input', function () {
+				// Sao chép giá trị của input1 vào input2
+				input2.value = input1.value;
+			});
+		</script>
 @endsection

@@ -23,7 +23,9 @@ Route::get('/',[Controller::class,'index'])->name('/');
 
 Route::get('/gioi-thieu',[Controller::class,'gioithieu']);
 
-Route::get('/bai-viet',[Controller::class,'baiviet']);
+Route::get('/bai-viet/{cate_post}',[Controller::class,'baiviet'])->name('post');
+
+Route::get('/postdetail/{cate_post}/{post_slug}',[Controller::class,'baivietdetail'])->name('post_detail');
 
 Route::get('/du-an',[Controller::class,'duan']);
 
@@ -58,15 +60,15 @@ Route::group(['prefix' => 'dashboard'], function() {
 
     //----------------------------Project----------------------------------------------
 
-    Route::resource('project',ProjectController::class);
+    Route::resource('project',ProjectController::class)->middleware('adminauth');
 
     //----------------------------Project----------------------------------------------
 
-    Route::resource('room',RoomController::class);
+    Route::resource('room',RoomController::class)->middleware('adminauth');
 
     //----------------------------status_project----------------------------------------------
     
-    Route::resource('status-project',StatusProjectController::class);
+    Route::resource('status-project', StatusProjectController::class)->middleware('adminauth');
 
     //----------------------------Type-post----------------------------------------------
     
@@ -78,7 +80,7 @@ Route::group(['prefix' => 'dashboard'], function() {
 
     //----------------------------User----------------------------------------------
     
-    Route::resource('user',UserController::class);
+    Route::resource('user',UserController::class)->middleware('adminauth');
 
 
 
@@ -90,8 +92,8 @@ Route::group(['prefix' => 'dashboard'], function() {
         'edit' => 'baogia.edit',
         'update' => 'baogia.update',
         'destroy' => 'baogia.destroy',
-    ]);
-    Route::patch('/baogia/{id}/check',[baoGiaController::class, 'check'])->name('baogia.check');
+    ])->middleware('adminauth');
+    Route::patch('/baogia/{id}/check',[baoGiaController::class, 'check'])->name('baogia.check')->middleware('adminauth');
 
     Route::resource('kygui',kyGuiController::class)->names([
         'index' => 'kygui.index',
@@ -101,7 +103,7 @@ Route::group(['prefix' => 'dashboard'], function() {
         'edit' => 'kygui.edit',
         'update' => 'kygui.update',
         'destroy' => 'kygui.destroy',
-    ]);
+    ])->middleware('adminauth');
     Route::patch('/kygui/{id}/check',[kyGuiController::class, 'check'])->name('kygui.check');
 
     Route::resource('tuvan',tuVanController::class)->names([
@@ -112,8 +114,8 @@ Route::group(['prefix' => 'dashboard'], function() {
         'edit' => 'tuvan.edit',
         'update' => 'tuvan.update',
         'destroy' => 'tuvan.destroy',
-    ]);;
-    Route::patch('/tuvan/{id}/check',[tuVanController::class, 'check'])->name('tuvan.check');
+    ])->middleware('adminauth');
+    Route::patch('/tuvan/{id}/check',[tuVanController::class, 'check'])->name('tuvan.check')->middleware('adminauth');
 
 
 });

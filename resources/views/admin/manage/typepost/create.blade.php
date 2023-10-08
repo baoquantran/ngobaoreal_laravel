@@ -24,8 +24,9 @@ Thêm loại tin
 					<form class="row" method="post" action="{{route('type-post.store')}}"> @csrf
 						<div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Tên trạng thái</label>
-							<input type="text" class="form-control p" name="name" id="exampleInputEmail1"
+							<input type="text" class="form-control p" name="name" id="input1"
 								aria-describedby="emailHelp">
+							<input hidden type="text" name="catep_slug" id="input2">
 						</div>
 						<div class='mb-3 px-2'> 
 					        <input name="hidden" type="radio" value="0"> Ẩn
@@ -40,4 +41,15 @@ Thêm loại tin
 			</div>
 		</main>
 		<!-- MAIN -->
+		<script>
+			// Lấy tham chiếu đến hai input
+			var input1 = document.getElementById('input1');
+			var input2 = document.getElementById('input2');
+
+			// Thêm sự kiện 'input' cho input1
+			input1.addEventListener('input', function () {
+				// Sao chép giá trị của input1 vào input2
+				input2.value = input1.value;
+			});
+		</script>
 @endsection

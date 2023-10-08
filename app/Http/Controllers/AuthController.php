@@ -19,12 +19,7 @@ class AuthController extends Controller
         if (
             auth()->guard('web')->attempt($credentials, $remember)
         ) {
-            $user = auth()->guard('web')->user();
-            
-            if ($user->role_id == 1)
                 return redirect('/dashboard');
-            else
-                return redirect('/');
         } else
             return back()->with('thongbao', 'Email, Password không đúng');
     }

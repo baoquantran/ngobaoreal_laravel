@@ -44,6 +44,7 @@ Danh sách tin
 								<th>Ngày cập nhật</th>
 								<th>Loại</th>
 								<th>Trạng thái</th>
+								<th>Người đăng</th>
 								<th>Cài đặt</th>
 							</tr>
 						</thead>
@@ -57,6 +58,7 @@ Danh sách tin
 								<td>{{$p->new_updated_at}}</td>
 								<td>{{$p->name}}</td>
 								<td>Đang ẩn</td>
+								<td>{{$p->poster}}</td>
 								<td class="">	
 								<a class="btn btn-outline-danger  m-1" href="{{route('post.edit', $p->id_post)}}"><i class="bi bi-pencil-square"></i></a>
 									

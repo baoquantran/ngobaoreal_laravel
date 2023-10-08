@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 class TypepostController extends Controller
 {
     /**
@@ -31,11 +32,14 @@ class TypepostController extends Controller
     {
         $name = $request['name'];
         $hidden = $request['hidden'];
+        $catep_slug = Str::slug($request['catep_slug']);
+        
 
         DB::table('cate_post')
         ->insert([
             'name'=> $name,
-            'hidden' =>$hidden
+            'hidden' =>$hidden,
+            'catep_slug' => $catep_slug
         ]);
         return redirect('/dashboard/type-post');
     }

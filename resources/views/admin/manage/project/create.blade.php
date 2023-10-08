@@ -29,13 +29,13 @@ Danh sách dự án
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
-							<label for="exampleInputEmail1" class="form-label">Địa chỉ</label>
+							<label for="exampleInputEmail1" class="form-label">Tên đường</label>
 							<input type="text" class="form-control p" name = "address" id="exampleInputEmail1"
 								aria-describedby="emailHelp">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputPassword1" class="form-label">Chọn tỉnh</label>
-							<select class="form-control" name="id_local" id="provinceSelect">
+							<select class="form-select" name="id_local1" id="provinceSelect">
 								@foreach($city as $c)
 								<option name ="id_local" value="{{$c->id_local}}">{{$c->name}}</option>
 								@endforeach
@@ -43,7 +43,7 @@ Danh sách dự án
 						</div>
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputPassword1" class="form-label">Chọn Quận</label>
-							<select class="form-control" name="id_local" id="parentIDSelect">
+							<select class="form-select" name="id_local2" id="parentIDSelect">
 								@foreach($district as $d)
 								<option name ="id_local" value="{{$d->id_local}}">{{$d->name}}</option>
 								@endforeach

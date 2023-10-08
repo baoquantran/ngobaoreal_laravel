@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,14 +15,13 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response {
         //return $next($request);
-        $user = Auth::guard('admin')->user();
-        if ($user && $user->role_id == 1) { 
+        $user = Auth::guard('web')->user();
+        if ($user->role_id == 1) { 
             return $next($request);
         }
         else {
-            $request->session()->put('prevurl',url()->current());
-            return redirect(url('dasboard/login'))
-                ->with('thongbao','Bạn cần đăng nhập với vai trò admin');
+            
+            abort(403, 'Bạn không có quyền truy cập vui lòng liên hệ Ngô Bảo Real để được cấp quyền');
         }
     }
 }
