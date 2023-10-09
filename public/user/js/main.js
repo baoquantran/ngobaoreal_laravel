@@ -273,6 +273,18 @@ $('#linktienich').click(function() {
         scrollTop: $('#tienich').offset().top
     }, 1000); // 1000 là tốc độ cuộn (1 giây)
 });
+$('#linkthanhtoan').click(function() {
+    // Sử dụng jQuery để cuộn mượt mà đến phần tử
+    $('html, body').animate({
+        scrollTop: $('#thanhtoan').offset().top
+    }, 1000); // 1000 là tốc độ cuộn (1 giây)
+});
+$('#linkmatbang').click(function() {
+    // Sử dụng jQuery để cuộn mượt mà đến phần tử
+    $('html, body').animate({
+        scrollTop: $('#matbang').offset().top
+    }, 1000); // 1000 là tốc độ cuộn (1 giây)
+});
 $('#linklienhe').click(function() {
     // Sử dụng jQuery để cuộn mượt mà đến phần tử
     $('html, body').animate({

@@ -24,14 +24,15 @@ Danh sách dự án
 					<form class="row" action="{{route('project.store')}}" method="post" enctype="multipart/form-data">
 					@csrf
 						<div class="mb-3 col-md-6 col-12">
-							<label for="exampleInputEmail1" class="form-label">Tên dự án</label>
-							<input type="text" class="form-control p" name="name" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+							<label for="exampleInputEmail1" class="form-label" >Tên dự án</label>
+							<input type="text" class="form-control p" name="name" id="input1"
+								aria-describedby="emailHelp" required>
+							<input hidden name="slug" id="input2" type="text">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Tên đường</label>
 							<input type="text" class="form-control p" name = "address" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputPassword1" class="form-label">Chọn tỉnh</label>
@@ -52,12 +53,12 @@ Danh sách dự án
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Nhập giá từ</label>
 							<input type="number" class="form-control p" name="from_price" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Nhập giá đến</label>
 							<input type="number" class="form-control p" name="to_price" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputPassword1" class="form-label">Trạng thái</label>
@@ -85,7 +86,7 @@ Danh sách dự án
 						</div>
 						<div class="mb-3 col-md-12 col-12">
 							<label for="exampleInputEmail1" class="form-label">Chọn ảnh</label>
-							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new">
+							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new" required>
 						</div>
 						<div class="mb-3 form-check">
 							<input name="hide" type="radio" value="0"> hiện
@@ -126,5 +127,15 @@ Danh sách dự án
 		</main>
 		<!-- MAIN -->
 
-		
+		<script>
+			// Lấy tham chiếu đến hai input
+			var input1 = document.getElementById('input1');
+			var input2 = document.getElementById('input2');
+
+			// Thêm sự kiện 'input' cho input1
+			input1.addEventListener('input', function () {
+				// Sao chép giá trị của input1 vào input2
+				input2.value = input1.value;
+			});
+		</script>
 @endsection

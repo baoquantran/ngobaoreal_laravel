@@ -30,10 +30,11 @@ class Controller extends BaseController
         ->orderBy('created_at','DESC')
         ->limit(4)
         ->get();
+        $kygui = DB::table('product')->where('kygui','1')->get();
         $posthot = DB::table('post')
         ->where('hot', '=', '0')
         ->get();
-        View::share(compact('catepost','status','product','local','postpp','post','posthot'));
+        View::share(compact('catepost','status','product','local','postpp','post','posthot','kygui'));
     }
 
     function index(){
@@ -118,10 +119,53 @@ class Controller extends BaseController
         return view('client.clients.blog-single', compact('postDetail','postlq'));
     }
     function duan(){
-        return view('client.clients.duan');
+        $project = DB::table('product')
+        ->join('local as local1', 'local1.id_local', '=', 'product.id_local1')
+        ->join('local as local2', 'local2.id_local', '=', 'product.id_local2')
+        ->join('status', 'status.id_status', '=', 'product.id_status')
+        ->join('room', 'room.id_room', '=', 'product.id_room')
+        ->select('local1.*', 'local2.*', 'product.*', 'room.*', 'status.*', 'room.name AS name_room', 'local1.name AS name_local1','local2.name AS name_local2', 'product.name AS name_product')
+        ->where('hide','=','1')
+        ->get();
+
+        $developing = DB::table('product')
+        ->join('local as local1', 'local1.id_local', '=', 'product.id_local1')
+        ->join('local as local2', 'local2.id_local', '=', 'product.id_local2')
+        ->join('status', 'status.id_status', '=', 'product.id_status')
+        ->join('room', 'room.id_room', '=', 'product.id_room')
+        ->select('local1.*', 'local2.*', 'product.*', 'room.*', 'status.*', 'room.name AS name_room', 'local1.name AS name_local1','local2.name AS name_local2', 'product.name AS name_product')
+        ->where('progress','0')
+        ->get();
+
+        $complete = DB::table('product')
+        ->join('local as local1', 'local1.id_local', '=', 'product.id_local1')
+        ->join('local as local2', 'local2.id_local', '=', 'product.id_local2')
+        ->join('status', 'status.id_status', '=', 'product.id_status')
+        ->join('room', 'room.id_room', '=', 'product.id_room')
+        ->select('local1.*', 'local2.*', 'product.*', 'room.*', 'status.*', 'room.name AS name_room', 'local1.name AS name_local1','local2.name AS name_local2', 'product.name AS name_product')
+        ->where('progress','1')
+        ->get();
+
+        return view('client.clients.duan',compact('project','complete','developing'));
     }
-    function duandetail(){
-        return view('client.clients.duan-single');
+    function duandetail(string $proSlug){
+
+        $proID = DB::table('product')->where('slug',$proSlug)->value('id_pro');
+
+        if($proID == null) 
+        
+        return redirect('/')->with('alert', 'Sản phẩm không tồn tại ở cửa hàng chúng tôi! Mời bạn tham khảo các sản phẩm khác!');
+
+        $project = DB::table('product')
+        ->join('local as local1', 'local1.id_local', '=', 'product.id_local1')
+        ->join('local as local2', 'local2.id_local', '=', 'product.id_local2')
+        ->join('status', 'status.id_status', '=', 'product.id_status')
+        ->join('room', 'room.id_room', '=', 'product.id_room')
+        ->select('local1.*', 'local2.*', 'product.*', 'room.*', 'status.*', 'room.name AS name_room', 'local1.name AS name_local1','local2.name AS name_local2', 'product.name AS name_product')
+        ->where('id_pro',$proID)
+        ->first();
+
+        return view('client.clients.duan-single',compact('project'));
     }
     function tuyendung(){
         return view('client.clients.tuyendung');

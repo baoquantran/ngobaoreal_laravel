@@ -9,7 +9,7 @@
         <div class="slider-container">
             <div class="slider">
                 <div class="slide">
-                    <img src="https://img.homedy.com/store/images/2020/02/15/phoi-canh-eco-green-sai-gon-637173889324999154.jpg"
+                    <img width="100%" src="/user/img/banner1.jpg"
                         alt="Slide 1">
                     <div>
                         <b>Ngô Bảo xin chào quý khách</b>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="https://www.lmpdesign.vn/thumbs/1920x800x2/upload/news/thiet-ke-cong-trinh-2-8901.jpg"
+                    <img width="100%" src="/user/img/banner2.jpeg"
                         alt="Slide 2">
                     <div>
                         <b>Dịch vụ bất động sản toàn diện</b>
@@ -27,11 +27,11 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="https://www.lmpdesign.vn/thumbs/1920x800x2/upload/news/thiet-ke-cong-trinh-2-8901.jpg"
+                    <img width="100%" src="/user/img/banner3.jpg"
                         alt="Slide 3">
                     <div>
                         <b>Ngô Bảo xin chào quý khách</b>
-                        <p>kh dsds đa a dadad adada adad </p>
+                        <p>Tại NBR, nơi quý khách tìm thấy sự chỉnh chu trong mọi chi tiết công việc</p>
                         <button data-bs-toggle="modal" data-bs-target="#banggia">Liên hệ Bảo</button>
                     </div>
                 </div>

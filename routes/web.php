@@ -29,7 +29,7 @@ Route::get('/postdetail/{cate_post}/{post_slug}',[Controller::class,'baivietdeta
 
 Route::get('/du-an',[Controller::class,'duan']);
 
-Route::get('/du-an-detail',[Controller::class,'duandetail']);
+Route::get('/du-an-detail/{pro_slug}',[Controller::class,'duandetail'])->name('project_detail');
 
 Route::get('/tuyen-dung',[Controller::class,'tuyendung']);
 
@@ -55,7 +55,7 @@ Route::get('/logout',[AuthController::class,'logout']);
 
 
 //----------------------------------------admin----------------------------------
-Route::group(['prefix' => 'dashboard'], function() {  
+Route::group(['prefix' => 'dashboard','middleware' => 'checkadmin'], function() {  
     Route::get('/',[AdminController::class,'index'])->name('dashboard');
 
     //----------------------------Project----------------------------------------------

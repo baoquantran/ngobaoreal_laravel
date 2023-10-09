@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
+
 
 
 
@@ -80,6 +82,7 @@ class ProjectController extends Controller
         $pro->progress = $request['progress'];
         $pro->id_local1 = $request['id_local1'];
         $pro->id_local2 = $request['id_local2'];
+        $pro->slug =  Str::slug($request['slug']);
 
         if ($request->hasFile('img__new')) {
             $file = $request->file('img__new');
@@ -90,7 +93,7 @@ class ProjectController extends Controller
         }
 
         $pro->save();
-        
+     
         return redirect(route('project.index'))->with('status', 'Thêm sản phẩm thành công');
     }
 
@@ -137,6 +140,7 @@ class ProjectController extends Controller
         $pro->thanhtoan = $request['thanhtoan'];
         $pro->kygui = $request['kygui'];
         $pro->progress = $request['progress'];
+        $pro->slug =  Str::slug($request['slug']);
 
         if ($request->hasFile('img__new')) {
             $file = $request->file('img__new');

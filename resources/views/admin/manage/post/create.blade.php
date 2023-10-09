@@ -28,7 +28,7 @@ Danh sách dự án
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Tiêu đề bài viết</label>
 							<input type="text" name="title" class="form-control p" id="input1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputPassword1" class="form-label">Loại</label>
@@ -40,7 +40,7 @@ Danh sách dự án
 						</div>
 						<div class="mb-3 col-md-12 col-12">
 							<label for="exampleInputEmail1" class="form-label">Chọn ảnh</label>
-							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new">
+							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new" required>
 						</div>
 						<div class="mb-3 form-check">
 							<input name="hidden" type="radio" value="0" checked> Ẩn
@@ -52,11 +52,11 @@ Danh sách dự án
 						</div>
                         <div class="mb-3 col-md-12 col-12">
 						<h3 class="text-center">Mô tả bài viết</h3>
-						<textarea name="vitri" id="" cols="30" rows="10"></textarea>
+						<textarea name="vitri" id="" cols="30" rows="10" <textarea name="vitri" id="" cols="30" rows="10"></textarea>></textarea>
 						</div>
 						<div class="mb-3 col-md-12 col-12">
 						<h3 class="text-center">Nội dung bài viết</h3>
-						<textarea name="tongquan" id="" cols="30" rows="10"></textarea>
+						<textarea name="tongquan" id="" cols="30" rows="10" <textarea name="vitri" id="" cols="30" rows="10"></textarea>></textarea>
 						</div>
 						<div class="col-md-2 col-12 m-auto">
 							<button type="submit" class="btn btn-primary">Lưu dự án</button>

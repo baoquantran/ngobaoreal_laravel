@@ -1,55 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Login Form</title>
-    <link rel="stylesheet" href="/admin/stylelogin.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        /* Add your custom styles here */
-    </style>
+	<title>Ngo Bao Real</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/user/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/user/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/user/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/user/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/user/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/user/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/user/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/user/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/user/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/user/css/login.css">
+<!--===============================================================================================-->
 </head>
 <body>
-    <div class="login-form w3_form">
-        <div class="login-title w3_title">
-            <h1>Elegant Login Form</h1>
-        </div>
-        <div class="login w3_login">
-            <h2 class="login-header w3_header">Log in</h2>
-            <div class="w3l_grid">
-                <form class="login-container" action="{{ route('login.submit') }}" method="post"> @csrf
-                    <input type="email" placeholder="Email" name="email" required>
-                    <input type="password" placeholder="Password" name="password" required>
-                    {{-- <input type="submit" value="Submit"> --}}
-                    <button type="submit">Đăng nhập</button>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('/user/img/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form action="{{ route('login.submit') }}" method="post"class="login100-form validate-form">
+                    @csrf
+					<span class="login100-form-logo">
+						<i><img width="100%" src="/user/img/ngobaoreal.vn2.png" alt=""></i>
+					</span>
+
+					<span class="login100-form-title p-b-34 p-t-27">
+						Ngo Bao Real Login
+					</span>
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="email" placeholder="Nhập email">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="password" placeholder="Nhập mật khẩu">
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+
+					<div class="contact100-form-checkbox">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<label class="label-checkbox100" for="ckb1">
+							Remember me
+						</label>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+                    <span class="d-flex justify-content-center mt-3 ">
                     @if(Session::exists('thongbao'))
-                         <b class="text-danger text-center mt-5" >{{ Session::get('thongbao') }} </b>
+                         <i class="text-white text-center" >{{ Session::get('thongbao') }} </i>
                     @endif
-                </form>
-                <div class="second-section w3_section">
-                    <div class="bottom-header w3_bottom">
-                        <h3>OR</h3>
-                    </div>
-                    <div class="social-links w3_social">
-                        <ul>
-                            <li><a class="facebook" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a class="twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a class="googleplus" href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="bottom-text w3_bottom_text">
-                    <p>No account yet? <a href="#">Signup</a></p>
-                    <h4><a href="#">Forgot your password?</a></h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-w3l">
-        <p class="agile">&copy; 2017 Elegant Login Form. All Rights Reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-    </div>
+                    </span>
+					<div class="text-center p-t-90">
+						<a class="txt1" href="/">
+							Trở về trang chủ
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
 </html>

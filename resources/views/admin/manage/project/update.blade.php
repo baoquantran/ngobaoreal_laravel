@@ -29,8 +29,9 @@ Cập nhật dự án
 					@csrf @method('PUT')
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Tên dự án</label>
-							<input type="text" class="form-control p" name="name" value="{{$product->name}}" id="exampleInputEmail1"
+							<input type="text" class="form-control p" name="name" value="{{$product->name}}" id="input1"
 								aria-describedby="emailHelp">
+							<input hidden name="slug" id="input2" value="{{$product->slug}}" type="text">
 						</div>
 						<div class="mb-3 col-md-6 col-12">
 							<label for="exampleInputEmail1" class="form-label">Địa chỉ</label>

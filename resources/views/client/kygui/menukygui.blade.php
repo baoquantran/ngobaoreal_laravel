@@ -13,24 +13,14 @@
             <div class="collapse navbar-collapse" id="menuChinh">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item p-2">
-                        <a class="nav-link text-menu text-white" href="/masterise-central-point">masterise center
-                            point</a>
+                        <a class="nav-link text-menu text-white" href="/">Trang chủ </a>
                     </li>
+                    @foreach ($kygui as $kg)
                     <li class="nav-item p-2">
-                        <a class="nav-link text-menu text-white" href="/lumiere-boulevard">lumiere boulevard</a>
+                        <a class="nav-link text-menu text-white" href="{{route('project_detail',[$kg->slug])}}"> {{$kg->name}}</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link text-menu text-white" href="/lumiere-riverside"> LUMIÈRE Riverside</a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link text-menu text-white" href="/delasol"> Delasol</a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link text-menu text-white" href="/themarq"> The Marq </a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link text-menu text-white" href="/ky-gui">Ký gửi</a>
-                    </li>
+                    @endforeach
+                  
                 </ul>
             </div>
         </nav>

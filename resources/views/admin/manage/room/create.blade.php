@@ -25,12 +25,12 @@ Thêm trạng thái dự án
 						<div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Tên loại</label>
 							<input type="text" class="form-control p" name="name" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
                         <div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Thứ tự</label>
 							<input type="number" class="form-control p" name="number" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
 						<div class='mb-3 px-2'> 
 					        <input name="hidden" type="radio" value="0"> Ẩn

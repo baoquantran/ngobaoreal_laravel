@@ -77,6 +77,7 @@
         <!-- Footer End -->
 
         <!-- cotact -->
+        
         <div class="call-now-button">
             <div>
                 <p class="call-text"><a href="tel:0339321355" title="0903 412 411">0339 321 355</a></p>
@@ -85,6 +86,18 @@
                     <div class="quick-alo-ph-circle-fill"></div>
                     <div class="quick-alo-ph-btn-icon quick-alo-phone-img-circle">
                         <i class="bi bi-telephone"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="call-now-button bg-info" style="margin-bottom: 140px;">
+            <div>
+                <p class="call-text"><a href="https://zalo.me/0339321355" class="text-white"> 0339 321 355 </a></p>
+                <a href="https://zalo.me/0339321355" title="0339321355">
+                    <div class="quick-alo-ph-circle"></div>
+                    <div class="quick-alo-ph-circle-fill"></div>
+                    <div class="quick-alo-ph-btn-icon quick-alo-phone-img-circle">
+                        <i class="bg-info"><img src="/user/img/zalo4.png" alt=""></i>
                     </div>
                 </a>
             </div>

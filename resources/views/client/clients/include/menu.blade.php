@@ -12,7 +12,7 @@
                         <a href="/" class="nav-item nav-link active">Trang chủ</a>
                         <a href="/gioi-thieu" class="nav-item nav-link">Giới thiệu</a>
                         <div class="nav-item dropdown">
-                            <a href="/bai-viet" id="project-link" class="nav-link dropdown-toggle">Bài viết</a>
+                            <a href="/bai-viet/1" id="project-link" class="nav-link dropdown-toggle">Bài viết</a>
                             <div class="dropdown-menu rounded-0 m-0" style="background-color: #E4A852; border: none;">
                                 
                             @foreach($catepost as $cp)
@@ -30,7 +30,7 @@
                                     triễn khai</a>
                             </div>
                         </div>
-                        <a href="/masterise-central-point" class="nav-item nav-link" target="_blank">Ký gửi</a>
+                        <a href="/ky-gui" class="nav-item nav-link" target="_blank">Ký gửi</a>
                         <a href="/tuyen-dung" class="nav-item nav-link">Tuyển dụng</a>
                         <a href="/lien-he" class="nav-item nav-link">Liên hệ</a>
                     </div>

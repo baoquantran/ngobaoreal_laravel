@@ -25,32 +25,32 @@ Thêm tài khoản người dùng
 						@csrf
 						<div class="mb-3 col-md-12 col-12">
 							<label for="exampleInputEmail1" class="form-label">Chọn ảnh</label>
-							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new">
+							<input type="file" class="form-control p" id="exampleInputEmail1"aria-describedby="emailHelp" name="img__new" required>
 						</div>
 						<div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Họ và tên</label>
 							<input type="text" class="form-control p" name="name" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
                         <div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Số điện thoại</label>
 							<input type="text" class="form-control p" name="phone" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
                         <div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Email</label>
 							<input type="email" class="form-control p" name="email" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
                         <div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Địa chỉ</label>
 							<input type="text" class="form-control p" name="address" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
                         <div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Mật khẩu</label>
 							<input type="password" class="form-control p" name="password" id="exampleInputEmail1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 						</div>
 						
 						<div class="mb-3 col-md-12 col-12">

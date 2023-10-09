@@ -25,7 +25,7 @@ Thêm loại tin
 						<div class="mb-3 col-md-12">
 							<label for="exampleInputEmail1" class="form-label">Tên trạng thái</label>
 							<input type="text" class="form-control p" name="name" id="input1"
-								aria-describedby="emailHelp">
+								aria-describedby="emailHelp" required>
 							<input hidden type="text" name="catep_slug" id="input2">
 						</div>
 						<div class='mb-3 px-2'> 
