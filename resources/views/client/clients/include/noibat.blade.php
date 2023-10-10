@@ -1,4 +1,9 @@
+@if(count($posthot) > 0)
 <div class="container-xxl py-5">
+<div class="text-center mx-auto mt-5 mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+        <h1 class="mb-3">Bài viết nổi bật</h1>
+        <p>Những thông tin quan trọng bạn không nên bỏ lỡ.</p>
+    </div>
     <div class="container hot">
         @foreach($posthot as $ph)
         <div class="row g-5 align-items-center d-flex">
@@ -17,3 +22,4 @@
         @endforeach
     </div>
 </div>
+@endif

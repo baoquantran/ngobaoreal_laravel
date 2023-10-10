@@ -160,7 +160,7 @@
    </a> -->
             <a class="nav-link" href="">{{ Auth::user()->name }}</a>
             <div class="profile">
-                <img src="{{ Auth::user()->img }}"
+                <img src="/{{ Auth::user()->img }}"
                     alt="">
                 <ul class="profile-link">
                     <li><a class="nav-link" href="#"><i class='bx bxs-user-circle icon'></i> Hồ sơ</a></li>

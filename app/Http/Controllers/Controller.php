@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\View;
+use Illuminate\Http\Request;
 
 use function Laravel\Prompts\select;
 
@@ -38,6 +39,10 @@ class Controller extends BaseController
     }
 
     function index(){
+        $district = DB::table('local')->where('parent_id','!=','0')->get();
+        $city = DB::table('local')->where('parent_id','=','0')->get();
+        $status = DB::table('status')->get();
+        $loai = DB::table('room')->get();
         $all = DB::table('product')
             ->join('local as local1', 'local1.id_local', '=', 'product.id_local1')
             ->join('local as local2', 'local2.id_local', '=', 'product.id_local2')
@@ -71,7 +76,31 @@ class Controller extends BaseController
             ->where('product.id_status','=','3')
             ->get();
         
-        return view('client.clients.index', compact('all', 'sell','lease','leaseandsell'.''));
+        return view('client.clients.index', compact('all', 'sell','lease','leaseandsell','district','city','loai','status'));
+    }
+    public function search(Request $request)
+    {
+        // Retrieve the values selected in the form's dropdowns.
+        $city = $request->input('city');
+        $district = $request->input('district');
+        $status = $request->input('status');
+        $loai = $request->input('loai');
+
+        // Perform the search using your model. Modify this as per your database structure.
+        $results = DB::table('product')
+        ->join('local as local1', 'local1.id_local', '=', 'product.id_local1')
+            ->join('local as local2', 'local2.id_local', '=', 'product.id_local2')
+            ->join('status', 'status.id_status', '=', 'product.id_status')
+            ->join('room', 'room.id_room', '=', 'product.id_room')
+            ->select('local1.*', 'local2.*', 'product.*', 'room.*', 'status.*', 'room.name AS name_room', 'local1.name AS name_local1','local2.name AS name_local2', 'product.name AS name_product')
+            ->where('product.id_local1', $city)
+            ->where('product.id_local2', $district)
+            ->where('product.id_status', $status)
+            ->where('product.id_room', $loai)
+            ->get();
+
+        // Pass the results to a view to display them.
+        return view('client.clients.search', compact('results'));
     }
     function gioithieu(){
         return view('client.clients.about');
@@ -97,6 +126,25 @@ class Controller extends BaseController
         $postnoibat = DB::table('post')->orderBy('created_at','desc')->limit(10)->get();
 
         return view('client.clients.blog',compact('postmain','postpb','postnoibat'));
+    }
+    function baiviets(){
+        
+       
+        $postpb = DB::table('post')
+        ->join('cate_post','cate_post.id_cp','post.id_cp')
+        ->select('post.*','cate_post.*','post.created_at AS ngaydang')
+        ->orderBy('ngaydang','desc')
+        ->limit(4)->get();
+
+
+        $postmain = DB::table('post')
+        ->join('cate_post','cate_post.id_cp','post.id_cp')
+        ->select('post.*','cate_post.*','post.created_at AS ngaydang')
+        ->get();
+
+        $postnoibat = DB::table('post')->orderBy('created_at','desc')->limit(10)->get();
+
+        return view('client.clients.blogmain',compact('postmain','postpb','postnoibat'));
     }
     function baivietdetail(string $ctSlug,string $postSlug = ''){
         

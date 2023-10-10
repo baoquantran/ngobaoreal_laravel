@@ -6,15 +6,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Gate;
 use Auth;
+use Illuminate\Support\Facades\DB;
+
 class AdminController extends Controller
 {
     function index()
     {
         // $name = "Quân trần";
 
-        // $test = Str::slug($name);
-        // abort_if(Gate::denies('user_access'),403,'Bạn không có quyền truy cập');
-        return view('admin.dashboard');
+        
+        $project = DB::table('product')->get();
+        $countuser = DB::table('users')->count();
+        $countproject = DB::table('product')->count();
+
+        return view('admin.dashboard',compact('project','countuser','countproject'));
     }
 
 }

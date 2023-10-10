@@ -19,11 +19,12 @@ use App\Http\Controllers\tuVanController;
 
 Route::get('/',[Controller::class,'index'])->name('/');
 // Route::post('/',[baoGiaController::class,'baogia_'])->name('baogia');
-
+Route::post('/search',[Controller::class,'search'])->name('search');
 
 Route::get('/gioi-thieu',[Controller::class,'gioithieu']);
 
 Route::get('/bai-viet/{cate_post}',[Controller::class,'baiviet'])->name('post');
+Route::get('/bai-viet-ngobaoreal',[Controller::class,'baiviets'])->name('posts');
 
 Route::get('/postdetail/{cate_post}/{post_slug}',[Controller::class,'baivietdetail'])->name('post_detail');
 
@@ -37,15 +38,7 @@ Route::get('/lien-he',[Controller::class,'lienhe'])->name('lien-he');
 
 Route::get('/ky-gui',[Controller::class,'kygui']);
 
-Route::get('/lumiere-boulevard',[Controller::class,'lumiereboulevard']);
 
-Route::get('/masterise-central-point',[Controller::class,'masterisecentralpoint'])->name('MASTERISECENTERPOINT');
-
-Route::get('/lumiere-riverside',[Controller::class,'lumimeRiverside']);
-
-Route::get('/themarq',[Controller::class,'themarq']);
-
-Route::get('/delasol',[Controller::class,'delasol']);
 
 
 //----------------------------Dang nhap----------------------------------------------

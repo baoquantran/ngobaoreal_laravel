@@ -12,7 +12,7 @@
                         <a href="/" class="nav-item nav-link active">Trang chủ</a>
                         <a href="/gioi-thieu" class="nav-item nav-link">Giới thiệu</a>
                         <div class="nav-item dropdown">
-                            <a href="/bai-viet/1" id="project-link" class="nav-link dropdown-toggle">Bài viết</a>
+                            <a href="/bai-viet-ngobaoreal" id="project-link" class="nav-link dropdown-toggle">Bài viết</a>
                             <div class="dropdown-menu rounded-0 m-0" style="background-color: #E4A852; border: none;">
                                 
                             @foreach($catepost as $cp)

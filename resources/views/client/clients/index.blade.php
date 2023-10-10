@@ -47,31 +47,53 @@
 
     <!-- Search Start -->
     <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
-        <div class="container">
-            <div class="row g-2">
-                <div class="col-md-10">
+        <form method="post" action="{{route('search')}}">
+            @csrf
+            <div class="container">
+                <div class="row g-2">
+                    <div class="col-md-10">
 
-                    <div class="row g-2">
-                        <div class="col-md-6">
-                            <select class="form-select border-0 py-3" id="location" onchange="updateDistricts()">
-                                <option value="all">Chọn thành phố</option>
-                                <option value="hanoi">Hà Nội</option>
-                                <option value="hochiminh">Hồ Chí Minh</option>
-                                <!-- Thêm các tỉnh và thành phố khác ở Việt Nam vào đây -->
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <select class="form-select border-0 py-3" id="district">
-
-                            </select>
+                        <div class="row g-2">
+                            <div class="col-md-3">
+                                <select name="city" class="form-select border-0 py-3" >
+                                    <option value="0">Chọn tỉnh</option>
+                                    @foreach($city as $c)
+                                    <option value="{{$c->id_local}}">{{$c->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="district" class="form-select border-0 py-3" ">
+                                    <option value="0">Chọn quận</option>
+                                    @foreach($district as $d)
+                                    <option value="{{$d->id_local}}">{{$d->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="status" class="form-select border-0 py-3" ">
+                                    <option value="0">Chọn thành trạng thái</option>
+                                    @foreach($status as $s)
+                                    <option value="{{$s->id_status}}">{{$s->name_status}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="loai" class="form-select border-0 py-3" ">
+                                    <option value="0">Chọn loại</option>
+                                    @foreach($loai as $l)
+                                    <option value="{{$l->id_room}}">{{$l->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-dark border-0 w-100 py-3">Tìm kiếm</button>
+                    <div class="col-md-2">
+                        <button class="btn btn-dark border-0 w-100 py-3">Tìm kiếm</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
     <!-- Search End -->
 

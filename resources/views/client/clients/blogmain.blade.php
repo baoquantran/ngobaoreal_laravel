@@ -7,7 +7,7 @@
     <div class="container-fluid header bg-white p-0">
         <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
             <div class="col-md-6 p-5 mt-lg-5">
-                <h1 class="display-5 animated fadeIn mb-4">Ngô Bảo Real bài viết {{$postmain[0]->name}}</h1>
+                <h1 class="display-5 animated fadeIn mb-4">Ngô Bảo Real bài viết</h1>
                 <nav aria-label="breadcrumb animated fadeIn">
                     <ol class="breadcrumb text-uppercase">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -22,7 +22,10 @@
     </div>
     <!-- Header End -->
     <!-- baivietnoibat -->
-    
+    <div class="text-center mx-auto mt-5 mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+        <h1 class="mb-3">Bài viết nổi bật</h1>
+        <p>Những thông tin quan trọng bạn không nên bỏ lỡ.</p>
+    </div>
     @include('client.clients.include.noibat')
     <!-- dongbaivietnoibat -->
    

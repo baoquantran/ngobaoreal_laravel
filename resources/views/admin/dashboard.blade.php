@@ -27,14 +27,14 @@
 				<li>
 					<i class='bx bxs-calendar-check'></i>
 					<span class="text">
-						<h3>15</h3>
+						<h3>{{$countproject}}</h3>
 						<p>Tổng số dự án</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-group'></i>
 					<span class="text">
-						<h3>3</h3>
+						<h3>{{$countuser}}</h3>
 						<p>Số user</p>
 					</span>
 				</li>
